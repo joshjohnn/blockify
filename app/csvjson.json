@@ -1,0 +1,1934 @@
+[
+  {
+    "Symbol": "HBAR",
+    "Bullish": 56,
+    "Bearish": 2,
+    "Neutral": 39
+  },
+  {
+    "Symbol": "MEDIA",
+    "Bullish": 30,
+    "Bearish": 7,
+    "Neutral": 60
+  },
+  {
+    "Symbol": "KSM",
+    "Bullish": 26,
+    "Bearish": 4,
+    "Neutral": 69
+  },
+  {
+    "Symbol": "OCEAN",
+    "Bullish": 42,
+    "Bearish": 8,
+    "Neutral": 44
+  },
+  {
+    "Symbol": "NU",
+    "Bullish": 44,
+    "Bearish": 3,
+    "Neutral": 51
+  },
+  {
+    "Symbol": "SAND",
+    "Bullish": 33,
+    "Bearish": 9,
+    "Neutral": 56
+  },
+  {
+    "Symbol": "MOODENG",
+    "Bullish": 74,
+    "Bearish": 8,
+    "Neutral": 15
+  },
+  {
+    "Symbol": "ARB",
+    "Bullish": 44,
+    "Bearish": 2,
+    "Neutral": 53
+  },
+  {
+    "Symbol": "MIR",
+    "Bullish": 34,
+    "Bearish": 3,
+    "Neutral": 63
+  },
+  {
+    "Symbol": "DREP",
+    "Bullish": 39,
+    "Bearish": 8,
+    "Neutral": 47
+  },
+  {
+    "Symbol": "MDT",
+    "Bullish": 48,
+    "Bearish": 5,
+    "Neutral": 46
+  },
+  {
+    "Symbol": "CORECHAIN",
+    "Bullish": 10,
+    "Bearish": 0,
+    "Neutral": 7
+  },
+  {
+    "Symbol": "VGX",
+    "Bullish": 59,
+    "Bearish": 13,
+    "Neutral": 26
+  },
+  {
+    "Symbol": "STORJ",
+    "Bullish": 15,
+    "Bearish": 8,
+    "Neutral": 77
+  },
+  {
+    "Symbol": "FOX",
+    "Bullish": 54,
+    "Bearish": 1,
+    "Neutral": 41
+  },
+  {
+    "Symbol": "RENDER",
+    "Bullish": 30,
+    "Bearish": 6,
+    "Neutral": 62
+  },
+  {
+    "Symbol": "CRV",
+    "Bullish": 52,
+    "Bearish": 2,
+    "Neutral": 45
+  },
+  {
+    "Symbol": "OP",
+    "Bullish": 30,
+    "Bearish": 8,
+    "Neutral": 61
+  },
+  {
+    "Symbol": "AERO",
+    "Bullish": 45,
+    "Bearish": 3,
+    "Neutral": 44
+  },
+  {
+    "Symbol": "ALCX",
+    "Bullish": 55,
+    "Bearish": 2,
+    "Neutral": 42
+  },
+  {
+    "Symbol": "BCH",
+    "Bullish": 27,
+    "Bearish": 9,
+    "Neutral": 64
+  },
+  {
+    "Symbol": "FLOKI",
+    "Bullish": 37,
+    "Bearish": 3,
+    "Neutral": 58
+  },
+  {
+    "Symbol": "GST",
+    "Bullish": 29,
+    "Bearish": 4,
+    "Neutral": 65
+  },
+  {
+    "Symbol": "BTC",
+    "Bullish": 38,
+    "Bearish": 7,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "ZETA",
+    "Bullish": 22,
+    "Bearish": 1,
+    "Neutral": 77
+  },
+  {
+    "Symbol": "AKT",
+    "Bullish": 34,
+    "Bearish": 5,
+    "Neutral": 59
+  },
+  {
+    "Symbol": "A8",
+    "Bullish": 4,
+    "Bearish": 1,
+    "Neutral": 6
+  },
+  {
+    "Symbol": "T",
+    "Bullish": 37,
+    "Bearish": 10,
+    "Neutral": 51
+  },
+  {
+    "Symbol": "CHZ",
+    "Bullish": 51,
+    "Bearish": 3,
+    "Neutral": 43
+  },
+  {
+    "Symbol": "ORN",
+    "Bullish": 21,
+    "Bearish": 2,
+    "Neutral": 77
+  },
+  {
+    "Symbol": "DAR",
+    "Bullish": 42,
+    "Bearish": 8,
+    "Neutral": 48
+  },
+  {
+    "Symbol": "BOND",
+    "Bullish": 45,
+    "Bearish": 6,
+    "Neutral": 47
+  },
+  {
+    "Symbol": "LSETH",
+    "Bullish": 38,
+    "Bearish": 3,
+    "Neutral": 57
+  },
+  {
+    "Symbol": "KAVA",
+    "Bullish": 45,
+    "Bearish": 5,
+    "Neutral": 47
+  },
+  {
+    "Symbol": "SYN",
+    "Bullish": 33,
+    "Bearish": 6,
+    "Neutral": 59
+  },
+  {
+    "Symbol": "OGN",
+    "Bullish": 35,
+    "Bearish": 4,
+    "Neutral": 58
+  },
+  {
+    "Symbol": "EURC",
+    "Bullish": 46,
+    "Bearish": 6,
+    "Neutral": 45
+  },
+  {
+    "Symbol": "BTRST",
+    "Bullish": 31,
+    "Bearish": 0,
+    "Neutral": 25
+  },
+  {
+    "Symbol": "BAT",
+    "Bullish": 41,
+    "Bearish": 4,
+    "Neutral": 55
+  },
+  {
+    "Symbol": "SEAM",
+    "Bullish": 24,
+    "Bearish": 7,
+    "Neutral": 69
+  },
+  {
+    "Symbol": "SUSHI",
+    "Bullish": 28,
+    "Bearish": 5,
+    "Neutral": 65
+  },
+  {
+    "Symbol": "PRO",
+    "Bullish": 63,
+    "Bearish": 4,
+    "Neutral": 31
+  },
+  {
+    "Symbol": "FIDA",
+    "Bullish": 35,
+    "Bearish": 1,
+    "Neutral": 64
+  },
+  {
+    "Symbol": "HIGH",
+    "Bullish": 35,
+    "Bearish": 8,
+    "Neutral": 57
+  },
+  {
+    "Symbol": "RONIN",
+    "Bullish": 40,
+    "Bearish": 3,
+    "Neutral": 52
+  },
+  {
+    "Symbol": "SUI",
+    "Bullish": 50,
+    "Bearish": 5,
+    "Neutral": 39
+  },
+  {
+    "Symbol": "HNT",
+    "Bullish": 28,
+    "Bearish": 4,
+    "Neutral": 64
+  },
+  {
+    "Symbol": "JTO",
+    "Bullish": 31,
+    "Bearish": 3,
+    "Neutral": 52
+  },
+  {
+    "Symbol": "DYP",
+    "Bullish": 55,
+    "Bearish": 5,
+    "Neutral": 39
+  },
+  {
+    "Symbol": "TIA",
+    "Bullish": 43,
+    "Bearish": 7,
+    "Neutral": 49
+  },
+  {
+    "Symbol": "SNT",
+    "Bullish": 35,
+    "Bearish": 4,
+    "Neutral": 59
+  },
+  {
+    "Symbol": "XRP",
+    "Bullish": 34,
+    "Bearish": 13,
+    "Neutral": 43
+  },
+  {
+    "Symbol": "G",
+    "Bullish": 38,
+    "Bearish": 7,
+    "Neutral": 55
+  },
+  {
+    "Symbol": "NEON",
+    "Bullish": 38,
+    "Bearish": 6,
+    "Neutral": 50
+  },
+  {
+    "Symbol": "TRUMP",
+    "Bullish": 20,
+    "Bearish": 6,
+    "Neutral": 71
+  },
+  {
+    "Symbol": "TONE",
+    "Bullish": 51,
+    "Bearish": 8,
+    "Neutral": 38
+  },
+  {
+    "Symbol": "FLR",
+    "Bullish": 24,
+    "Bearish": 7,
+    "Neutral": 63
+  },
+  {
+    "Symbol": "NEAR",
+    "Bullish": 33,
+    "Bearish": 9,
+    "Neutral": 55
+  },
+  {
+    "Symbol": "BADGER",
+    "Bullish": 41,
+    "Bearish": 8,
+    "Neutral": 45
+  },
+  {
+    "Symbol": "RARE",
+    "Bullish": 34,
+    "Bearish": 1,
+    "Neutral": 65
+  },
+  {
+    "Symbol": "NCT",
+    "Bullish": 27,
+    "Bearish": 2,
+    "Neutral": 71
+  },
+  {
+    "Symbol": "GRT",
+    "Bullish": 51,
+    "Bearish": 2,
+    "Neutral": 45
+  },
+  {
+    "Symbol": "SWELL",
+    "Bullish": 39,
+    "Bearish": 3,
+    "Neutral": 53
+  },
+  {
+    "Symbol": "MASK",
+    "Bullish": 46,
+    "Bearish": 3,
+    "Neutral": 48
+  },
+  {
+    "Symbol": "SUKU",
+    "Bullish": 35,
+    "Bearish": 13,
+    "Neutral": 50
+  },
+  {
+    "Symbol": "MSOL",
+    "Bullish": 67,
+    "Bearish": 1,
+    "Neutral": 32
+  },
+  {
+    "Symbol": "REP",
+    "Bullish": 66,
+    "Bearish": 3,
+    "Neutral": 31
+  },
+  {
+    "Symbol": "GHST",
+    "Bullish": 35,
+    "Bearish": 1,
+    "Neutral": 62
+  },
+  {
+    "Symbol": "AUCTION",
+    "Bullish": 42,
+    "Bearish": 7,
+    "Neutral": 50
+  },
+  {
+    "Symbol": "KRL",
+    "Bullish": 55,
+    "Bearish": 0,
+    "Neutral": 45
+  },
+  {
+    "Symbol": "COVAL",
+    "Bullish": 20,
+    "Bearish": 11,
+    "Neutral": 68
+  },
+  {
+    "Symbol": "VET",
+    "Bullish": 47,
+    "Bearish": 4,
+    "Neutral": 46
+  },
+  {
+    "Symbol": "ZEN",
+    "Bullish": 43,
+    "Bearish": 1,
+    "Neutral": 44
+  },
+  {
+    "Symbol": "AST",
+    "Bullish": 41,
+    "Bearish": 5,
+    "Neutral": 43
+  },
+  {
+    "Symbol": "BOBA",
+    "Bullish": 55,
+    "Bearish": 5,
+    "Neutral": 37
+  },
+  {
+    "Symbol": "HOPR",
+    "Bullish": 54,
+    "Bearish": 14,
+    "Neutral": 30
+  },
+  {
+    "Symbol": "QNT",
+    "Bullish": 26,
+    "Bearish": 8,
+    "Neutral": 64
+  },
+  {
+    "Symbol": "STX",
+    "Bullish": 35,
+    "Bearish": 6,
+    "Neutral": 58
+  },
+  {
+    "Symbol": "MAGIC",
+    "Bullish": 38,
+    "Bearish": 7,
+    "Neutral": 51
+  },
+  {
+    "Symbol": "PERP",
+    "Bullish": 25,
+    "Bearish": 1,
+    "Neutral": 73
+  },
+  {
+    "Symbol": "REQ",
+    "Bullish": 6,
+    "Bearish": 3,
+    "Neutral": 66
+  },
+  {
+    "Symbol": "FLOW",
+    "Bullish": 41,
+    "Bearish": 7,
+    "Neutral": 49
+  },
+  {
+    "Symbol": "RLY",
+    "Bullish": 58,
+    "Bearish": 6,
+    "Neutral": 32
+  },
+  {
+    "Symbol": "RAI",
+    "Bullish": 45,
+    "Bearish": 7,
+    "Neutral": 44
+  },
+  {
+    "Symbol": "WIF",
+    "Bullish": 76,
+    "Bearish": 3,
+    "Neutral": 21
+  },
+  {
+    "Symbol": "PYUSD",
+    "Bullish": 31,
+    "Bearish": 2,
+    "Neutral": 66
+  },
+  {
+    "Symbol": "ACH",
+    "Bullish": 19,
+    "Bearish": 6,
+    "Neutral": 74
+  },
+  {
+    "Symbol": "MTL",
+    "Bullish": 46,
+    "Bearish": 9,
+    "Neutral": 44
+  },
+  {
+    "Symbol": "C98",
+    "Bullish": 42,
+    "Bearish": 6,
+    "Neutral": 52
+  },
+  {
+    "Symbol": "ATA",
+    "Bullish": 22,
+    "Bearish": 6,
+    "Neutral": 68
+  },
+  {
+    "Symbol": "GIGA",
+    "Bullish": 78,
+    "Bearish": 2,
+    "Neutral": 17
+  },
+  {
+    "Symbol": "MOG",
+    "Bullish": 48,
+    "Bearish": 5,
+    "Neutral": 38
+  },
+  {
+    "Symbol": "ATOM",
+    "Bullish": 39,
+    "Bearish": 5,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "POND",
+    "Bullish": 40,
+    "Bearish": 3,
+    "Neutral": 56
+  },
+  {
+    "Symbol": "SHPING",
+    "Bullish": 34,
+    "Bearish": 1,
+    "Neutral": 26
+  },
+  {
+    "Symbol": "DEXT",
+    "Bullish": 35,
+    "Bearish": 3,
+    "Neutral": 61
+  },
+  {
+    "Symbol": "SPA",
+    "Bullish": 75,
+    "Bearish": 1,
+    "Neutral": 23
+  },
+  {
+    "Symbol": "DIMO",
+    "Bullish": 54,
+    "Bearish": 4,
+    "Neutral": 37
+  },
+  {
+    "Symbol": "FIL",
+    "Bullish": 55,
+    "Bearish": 4,
+    "Neutral": 41
+  },
+  {
+    "Symbol": "TBTC",
+    "Bullish": 4,
+    "Bearish": 11,
+    "Neutral": 83
+  },
+  {
+    "Symbol": "ONDO",
+    "Bullish": 45,
+    "Bearish": 6,
+    "Neutral": 44
+  },
+  {
+    "Symbol": "ANKR",
+    "Bullish": 38,
+    "Bearish": 3,
+    "Neutral": 58
+  },
+  {
+    "Symbol": "LRDS",
+    "Bullish": 11,
+    "Bearish": 0,
+    "Neutral": 20
+  },
+  {
+    "Symbol": "MATH",
+    "Bullish": 23,
+    "Bearish": 13,
+    "Neutral": 59
+  },
+  {
+    "Symbol": "QUICK",
+    "Bullish": 33,
+    "Bearish": 7,
+    "Neutral": 56
+  },
+  {
+    "Symbol": "VOXEL",
+    "Bullish": 37,
+    "Bearish": 0,
+    "Neutral": 62
+  },
+  {
+    "Symbol": "ENJ",
+    "Bullish": 22,
+    "Bearish": 0,
+    "Neutral": 78
+  },
+  {
+    "Symbol": "PNG",
+    "Bullish": 36,
+    "Bearish": 10,
+    "Neutral": 50
+  },
+  {
+    "Symbol": "WELL",
+    "Bullish": 38,
+    "Bearish": 5,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "POLY",
+    "Bullish": 33,
+    "Bearish": 11,
+    "Neutral": 56
+  },
+  {
+    "Symbol": "WAXL",
+    "Bullish": 33,
+    "Bearish": 2,
+    "Neutral": 65
+  },
+  {
+    "Symbol": "POWR",
+    "Bullish": 45,
+    "Bearish": 3,
+    "Neutral": 50
+  },
+  {
+    "Symbol": "NKN",
+    "Bullish": 45,
+    "Bearish": 7,
+    "Neutral": 43
+  },
+  {
+    "Symbol": "KEEP",
+    "Bullish": 42,
+    "Bearish": 2,
+    "Neutral": 52
+  },
+  {
+    "Symbol": "SYLO",
+    "Bullish": 41,
+    "Bearish": 8,
+    "Neutral": 46
+  },
+  {
+    "Symbol": "ALEO",
+    "Bullish": 41,
+    "Bearish": 4,
+    "Neutral": 46
+  },
+  {
+    "Symbol": "CBETH",
+    "Bullish": 25,
+    "Bearish": 8,
+    "Neutral": 60
+  },
+  {
+    "Symbol": "ELA",
+    "Bullish": 48,
+    "Bearish": 6,
+    "Neutral": 45
+  },
+  {
+    "Symbol": "ICP",
+    "Bullish": 25,
+    "Bearish": 7,
+    "Neutral": 65
+  },
+  {
+    "Symbol": "ETC",
+    "Bullish": 41,
+    "Bearish": 5,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "COMP",
+    "Bullish": 44,
+    "Bearish": 7,
+    "Neutral": 48
+  },
+  {
+    "Symbol": "GNO",
+    "Bullish": 45,
+    "Bearish": 5,
+    "Neutral": 50
+  },
+  {
+    "Symbol": "GMT",
+    "Bullish": 43,
+    "Bearish": 4,
+    "Neutral": 48
+  },
+  {
+    "Symbol": "MANA",
+    "Bullish": 35,
+    "Bearish": 7,
+    "Neutral": 58
+  },
+  {
+    "Symbol": "MUSD",
+    "Bullish": 36,
+    "Bearish": 2,
+    "Neutral": 60
+  },
+  {
+    "Symbol": "AUDIO",
+    "Bullish": 43,
+    "Bearish": 8,
+    "Neutral": 49
+  },
+  {
+    "Symbol": "OMNI",
+    "Bullish": 31,
+    "Bearish": 3,
+    "Neutral": 64
+  },
+  {
+    "Symbol": "SKL",
+    "Bullish": 52,
+    "Bearish": 2,
+    "Neutral": 45
+  },
+  {
+    "Symbol": "RNDR",
+    "Bullish": 22,
+    "Bearish": 13,
+    "Neutral": 62
+  },
+  {
+    "Symbol": "AXS",
+    "Bullish": 43,
+    "Bearish": 4,
+    "Neutral": 50
+  },
+  {
+    "Symbol": "NEST",
+    "Bullish": 43,
+    "Bearish": 7,
+    "Neutral": 48
+  },
+  {
+    "Symbol": "DDX",
+    "Bullish": 26,
+    "Bearish": 1,
+    "Neutral": 20
+  },
+  {
+    "Symbol": "MUSE",
+    "Bullish": 37,
+    "Bearish": 7,
+    "Neutral": 34
+  },
+  {
+    "Symbol": "ACX",
+    "Bullish": 33,
+    "Bearish": 4,
+    "Neutral": 63
+  },
+  {
+    "Symbol": "INV",
+    "Bullish": 16,
+    "Bearish": 1,
+    "Neutral": 83
+  },
+  {
+    "Symbol": "LPT",
+    "Bullish": 36,
+    "Bearish": 8,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "MOBILE",
+    "Bullish": 27,
+    "Bearish": 6,
+    "Neutral": 62
+  },
+  {
+    "Symbol": "AIOZ",
+    "Bullish": 32,
+    "Bearish": 3,
+    "Neutral": 63
+  },
+  {
+    "Symbol": "KNC",
+    "Bullish": 8,
+    "Bearish": 1,
+    "Neutral": 91
+  },
+  {
+    "Symbol": "MCO2",
+    "Bullish": 23,
+    "Bearish": 3,
+    "Neutral": 74
+  },
+  {
+    "Symbol": "LIT",
+    "Bullish": 45,
+    "Bearish": 1,
+    "Neutral": 53
+  },
+  {
+    "Symbol": "JASMY",
+    "Bullish": 32,
+    "Bearish": 5,
+    "Neutral": 60
+  },
+  {
+    "Symbol": "IMX",
+    "Bullish": 40,
+    "Bearish": 2,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "FX",
+    "Bullish": 29,
+    "Bearish": 8,
+    "Neutral": 62
+  },
+  {
+    "Symbol": "AERGO",
+    "Bullish": 42,
+    "Bearish": 3,
+    "Neutral": 52
+  },
+  {
+    "Symbol": "AAVE",
+    "Bullish": 31,
+    "Bearish": 14,
+    "Neutral": 50
+  },
+  {
+    "Symbol": "MLN",
+    "Bullish": 4,
+    "Bearish": 0,
+    "Neutral": 96
+  },
+  {
+    "Symbol": "CLV",
+    "Bullish": 37,
+    "Bearish": 4,
+    "Neutral": 57
+  },
+  {
+    "Symbol": "LQTY",
+    "Bullish": 46,
+    "Bearish": 5,
+    "Neutral": 48
+  },
+  {
+    "Symbol": "AMP",
+    "Bullish": 33,
+    "Bearish": 7,
+    "Neutral": 59
+  },
+  {
+    "Symbol": "CVX",
+    "Bullish": 9,
+    "Bearish": 4,
+    "Neutral": 87
+  },
+  {
+    "Symbol": "XCN",
+    "Bullish": 41,
+    "Bearish": 3,
+    "Neutral": 46
+  },
+  {
+    "Symbol": "PAX",
+    "Bullish": 21,
+    "Bearish": 1,
+    "Neutral": 76
+  },
+  {
+    "Symbol": "EUR",
+    "Bullish": 25,
+    "Bearish": 6,
+    "Neutral": 66
+  },
+  {
+    "Symbol": "VARA",
+    "Bullish": 37,
+    "Bearish": 7,
+    "Neutral": 51
+  },
+  {
+    "Symbol": "GTC",
+    "Bullish": 58,
+    "Bearish": 14,
+    "Neutral": 28
+  },
+  {
+    "Symbol": "UST",
+    "Bullish": 57,
+    "Bearish": 8,
+    "Neutral": 35
+  },
+  {
+    "Symbol": "MONA",
+    "Bullish": 38,
+    "Bearish": 0,
+    "Neutral": 14
+  },
+  {
+    "Symbol": "FIS",
+    "Bullish": 48,
+    "Bearish": 5,
+    "Neutral": 45
+  },
+  {
+    "Symbol": "SAFE",
+    "Bullish": 32,
+    "Bearish": 7,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "COW",
+    "Bullish": 44,
+    "Bearish": 8,
+    "Neutral": 41
+  },
+  {
+    "Symbol": "QSP",
+    "Bullish": 37,
+    "Bearish": 4,
+    "Neutral": 59
+  },
+  {
+    "Symbol": "POLS",
+    "Bullish": 48,
+    "Bearish": 2,
+    "Neutral": 49
+  },
+  {
+    "Symbol": "SEI",
+    "Bullish": 32,
+    "Bearish": 16,
+    "Neutral": 47
+  },
+  {
+    "Symbol": "XLM",
+    "Bullish": 60,
+    "Bearish": 1,
+    "Neutral": 37
+  },
+  {
+    "Symbol": "CGLD",
+    "Bullish": 22,
+    "Bearish": 4,
+    "Neutral": 71
+  },
+  {
+    "Symbol": "SUPER",
+    "Bullish": 34,
+    "Bearish": 6,
+    "Neutral": 60
+  },
+  {
+    "Symbol": "CVC",
+    "Bullish": 66,
+    "Bearish": 4,
+    "Neutral": 27
+  },
+  {
+    "Symbol": "PRIME",
+    "Bullish": 35,
+    "Bearish": 8,
+    "Neutral": 50
+  },
+  {
+    "Symbol": "HONEY",
+    "Bullish": 44,
+    "Bearish": 8,
+    "Neutral": 48
+  },
+  {
+    "Symbol": "PRCL",
+    "Bullish": 18,
+    "Bearish": 1,
+    "Neutral": 38
+  },
+  {
+    "Symbol": "BLUR",
+    "Bullish": 30,
+    "Bearish": 6,
+    "Neutral": 62
+  },
+  {
+    "Symbol": "BIT",
+    "Bullish": 49,
+    "Bearish": 5,
+    "Neutral": 46
+  },
+  {
+    "Symbol": "COTI",
+    "Bullish": 43,
+    "Bearish": 7,
+    "Neutral": 46
+  },
+  {
+    "Symbol": "ALGO",
+    "Bullish": 43,
+    "Bearish": 1,
+    "Neutral": 55
+  },
+  {
+    "Symbol": "GNT",
+    "Bullish": 35,
+    "Bearish": 4,
+    "Neutral": 58
+  },
+  {
+    "Symbol": "GAL",
+    "Bullish": 41,
+    "Bearish": 5,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "IO",
+    "Bullish": 31,
+    "Bearish": 6,
+    "Neutral": 61
+  },
+  {
+    "Symbol": "ALEPH",
+    "Bullish": 40,
+    "Bearish": 7,
+    "Neutral": 51
+  },
+  {
+    "Symbol": "AVAX",
+    "Bullish": 37,
+    "Bearish": 5,
+    "Neutral": 56
+  },
+  {
+    "Symbol": "QI",
+    "Bullish": 46,
+    "Bearish": 2,
+    "Neutral": 50
+  },
+  {
+    "Symbol": "AVT",
+    "Bullish": 54,
+    "Bearish": 1,
+    "Neutral": 45
+  },
+  {
+    "Symbol": "EIGEN",
+    "Bullish": 33,
+    "Bearish": 3,
+    "Neutral": 63
+  },
+  {
+    "Symbol": "CELR",
+    "Bullish": 44,
+    "Bearish": 1,
+    "Neutral": 53
+  },
+  {
+    "Symbol": "UNFI",
+    "Bullish": 28,
+    "Bearish": 5,
+    "Neutral": 67
+  },
+  {
+    "Symbol": "XYO",
+    "Bullish": 35,
+    "Bearish": 11,
+    "Neutral": 44
+  },
+  {
+    "Symbol": "00",
+    "Bullish": 33,
+    "Bearish": 10,
+    "Neutral": 52
+  },
+  {
+    "Symbol": "OMG",
+    "Bullish": 54,
+    "Bearish": 5,
+    "Neutral": 36
+  },
+  {
+    "Symbol": "RBN",
+    "Bullish": 43,
+    "Bearish": 2,
+    "Neutral": 55
+  },
+  {
+    "Symbol": "VTHO",
+    "Bullish": 56,
+    "Bearish": 2,
+    "Neutral": 38
+  },
+  {
+    "Symbol": "MOVE",
+    "Bullish": 28,
+    "Bearish": 6,
+    "Neutral": 65
+  },
+  {
+    "Symbol": "EOS",
+    "Bullish": 20,
+    "Bearish": 0,
+    "Neutral": 79
+  },
+  {
+    "Symbol": "ENS",
+    "Bullish": 39,
+    "Bearish": 11,
+    "Neutral": 50
+  },
+  {
+    "Symbol": "USDT",
+    "Bullish": 38,
+    "Bearish": 11,
+    "Neutral": 48
+  },
+  {
+    "Symbol": "YFI",
+    "Bullish": 43,
+    "Bearish": 2,
+    "Neutral": 52
+  },
+  {
+    "Symbol": "USDC",
+    "Bullish": 36,
+    "Bearish": 4,
+    "Neutral": 55
+  },
+  {
+    "Symbol": "UPI",
+    "Bullish": 84,
+    "Bearish": 0,
+    "Neutral": 16
+  },
+  {
+    "Symbol": "ILV",
+    "Bullish": 29,
+    "Bearish": 3,
+    "Neutral": 65
+  },
+  {
+    "Symbol": "WAMPL",
+    "Bullish": 27,
+    "Bearish": 3,
+    "Neutral": 70
+  },
+  {
+    "Symbol": "LRC",
+    "Bullish": 27,
+    "Bearish": 11,
+    "Neutral": 59
+  },
+  {
+    "Symbol": "MINA",
+    "Bullish": 43,
+    "Bearish": 6,
+    "Neutral": 43
+  },
+  {
+    "Symbol": "ABT",
+    "Bullish": 30,
+    "Bearish": 2,
+    "Neutral": 67
+  },
+  {
+    "Symbol": "SWFTC",
+    "Bullish": 47,
+    "Bearish": 2,
+    "Neutral": 44
+  },
+  {
+    "Symbol": "SD",
+    "Bullish": 32,
+    "Bearish": 2,
+    "Neutral": 62
+  },
+  {
+    "Symbol": "TRIBE",
+    "Bullish": 35,
+    "Bearish": 6,
+    "Neutral": 53
+  },
+  {
+    "Symbol": "AXL",
+    "Bullish": 38,
+    "Bearish": 4,
+    "Neutral": 57
+  },
+  {
+    "Symbol": "XTZ",
+    "Bullish": 65,
+    "Bearish": 2,
+    "Neutral": 33
+  },
+  {
+    "Symbol": "DIA",
+    "Bullish": 46,
+    "Bearish": 8,
+    "Neutral": 44
+  },
+  {
+    "Symbol": "OXT",
+    "Bullish": 66,
+    "Bearish": 2,
+    "Neutral": 32
+  },
+  {
+    "Symbol": "MNDE",
+    "Bullish": 22,
+    "Bearish": 2,
+    "Neutral": 44
+  },
+  {
+    "Symbol": "AURORA",
+    "Bullish": 49,
+    "Bearish": 5,
+    "Neutral": 46
+  },
+  {
+    "Symbol": "HFT",
+    "Bullish": 57,
+    "Bearish": 3,
+    "Neutral": 40
+  },
+  {
+    "Symbol": "DEGEN",
+    "Bullish": 36,
+    "Bearish": 5,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "BIGTIME",
+    "Bullish": 40,
+    "Bearish": 7,
+    "Neutral": 49
+  },
+  {
+    "Symbol": "PLU",
+    "Bullish": 29,
+    "Bearish": 7,
+    "Neutral": 62
+  },
+  {
+    "Symbol": "USD",
+    "Bullish": 33,
+    "Bearish": 7,
+    "Neutral": 55
+  },
+  {
+    "Symbol": "GODS",
+    "Bullish": 39,
+    "Bearish": 5,
+    "Neutral": 51
+  },
+  {
+    "Symbol": "LDO",
+    "Bullish": 56,
+    "Bearish": 2,
+    "Neutral": 42
+  },
+  {
+    "Symbol": "POL",
+    "Bullish": 66,
+    "Bearish": 2,
+    "Neutral": 30
+  },
+  {
+    "Symbol": "GLM",
+    "Bullish": 25,
+    "Bearish": 7,
+    "Neutral": 66
+  },
+  {
+    "Symbol": "INJ",
+    "Bullish": 22,
+    "Bearish": 8,
+    "Neutral": 69
+  },
+  {
+    "Symbol": "CTX",
+    "Bullish": 30,
+    "Bearish": 2,
+    "Neutral": 64
+  },
+  {
+    "Symbol": "TURBO",
+    "Bullish": 35,
+    "Bearish": 8,
+    "Neutral": 53
+  },
+  {
+    "Symbol": "MXC",
+    "Bullish": 45,
+    "Bearish": 2,
+    "Neutral": 49
+  },
+  {
+    "Symbol": "ANT",
+    "Bullish": 53,
+    "Bearish": 3,
+    "Neutral": 44
+  },
+  {
+    "Symbol": "ACS",
+    "Bullish": 24,
+    "Bearish": 7,
+    "Neutral": 68
+  },
+  {
+    "Symbol": "TOSHI",
+    "Bullish": 55,
+    "Bearish": 1,
+    "Neutral": 30
+  },
+  {
+    "Symbol": "YFII",
+    "Bullish": 83,
+    "Bearish": 0,
+    "Neutral": 17
+  },
+  {
+    "Symbol": "LOKA",
+    "Bullish": 31,
+    "Bearish": 3,
+    "Neutral": 64
+  },
+  {
+    "Symbol": "FET",
+    "Bullish": 41,
+    "Bearish": 5,
+    "Neutral": 51
+  },
+  {
+    "Symbol": "STRK",
+    "Bullish": 40,
+    "Bearish": 3,
+    "Neutral": 55
+  },
+  {
+    "Symbol": "TVK",
+    "Bullish": 55,
+    "Bearish": 12,
+    "Neutral": 33
+  },
+  {
+    "Symbol": "1INCH",
+    "Bullish": 47,
+    "Bearish": 2,
+    "Neutral": 49
+  },
+  {
+    "Symbol": "GBP",
+    "Bullish": 33,
+    "Bearish": 6,
+    "Neutral": 59
+  },
+  {
+    "Symbol": "AGLD",
+    "Bullish": 42,
+    "Bearish": 4,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "ETH",
+    "Bullish": 42,
+    "Bearish": 4,
+    "Neutral": 47
+  },
+  {
+    "Symbol": "METIS",
+    "Bullish": 29,
+    "Bearish": 0,
+    "Neutral": 71
+  },
+  {
+    "Symbol": "PLA",
+    "Bullish": 46,
+    "Bearish": 9,
+    "Neutral": 43
+  },
+  {
+    "Symbol": "RAD",
+    "Bullish": 67,
+    "Bearish": 1,
+    "Neutral": 32
+  },
+  {
+    "Symbol": "ORCA",
+    "Bullish": 33,
+    "Bearish": 7,
+    "Neutral": 57
+  },
+  {
+    "Symbol": "RLC",
+    "Bullish": 33,
+    "Bearish": 15,
+    "Neutral": 49
+  },
+  {
+    "Symbol": "LCX",
+    "Bullish": 25,
+    "Bearish": 4,
+    "Neutral": 70
+  },
+  {
+    "Symbol": "RGT",
+    "Bullish": 52,
+    "Bearish": 8,
+    "Neutral": 37
+  },
+  {
+    "Symbol": "FORTH",
+    "Bullish": 44,
+    "Bearish": 11,
+    "Neutral": 43
+  },
+  {
+    "Symbol": "DESO",
+    "Bullish": 36,
+    "Bearish": 3,
+    "Neutral": 60
+  },
+  {
+    "Symbol": "APT",
+    "Bullish": 35,
+    "Bearish": 4,
+    "Neutral": 59
+  },
+  {
+    "Symbol": "MKR",
+    "Bullish": 24,
+    "Bearish": 2,
+    "Neutral": 72
+  },
+  {
+    "Symbol": "ZEC",
+    "Bullish": 30,
+    "Bearish": 4,
+    "Neutral": 66
+  },
+  {
+    "Symbol": "PIRATE",
+    "Bullish": 47,
+    "Bearish": 5,
+    "Neutral": 42
+  },
+  {
+    "Symbol": "ALICE",
+    "Bullish": 38,
+    "Bearish": 8,
+    "Neutral": 47
+  },
+  {
+    "Symbol": "GFI",
+    "Bullish": 53,
+    "Bearish": 5,
+    "Neutral": 42
+  },
+  {
+    "Symbol": "ERN",
+    "Bullish": 9,
+    "Bearish": 4,
+    "Neutral": 87
+  },
+  {
+    "Symbol": "BUSD",
+    "Bullish": 40,
+    "Bearish": 26,
+    "Neutral": 28
+  },
+  {
+    "Symbol": "BICO",
+    "Bullish": 57,
+    "Bearish": 5,
+    "Neutral": 37
+  },
+  {
+    "Symbol": "TRAC",
+    "Bullish": 55,
+    "Bearish": 3,
+    "Neutral": 41
+  },
+  {
+    "Symbol": "XMON",
+    "Bullish": 36,
+    "Bearish": 3,
+    "Neutral": 61
+  },
+  {
+    "Symbol": "UNI",
+    "Bullish": 34,
+    "Bearish": 4,
+    "Neutral": 61
+  },
+  {
+    "Symbol": "EGLD",
+    "Bullish": 24,
+    "Bearish": 1,
+    "Neutral": 75
+  },
+  {
+    "Symbol": "DASH",
+    "Bullish": 36,
+    "Bearish": 4,
+    "Neutral": 55
+  },
+  {
+    "Symbol": "ARPA",
+    "Bullish": 33,
+    "Bearish": 9,
+    "Neutral": 56
+  },
+  {
+    "Symbol": "NMR",
+    "Bullish": 43,
+    "Bearish": 1,
+    "Neutral": 55
+  },
+  {
+    "Symbol": "JUP",
+    "Bullish": 37,
+    "Bearish": 5,
+    "Neutral": 55
+  },
+  {
+    "Symbol": "SNX",
+    "Bullish": 30,
+    "Bearish": 6,
+    "Neutral": 63
+  },
+  {
+    "Symbol": "LOOM",
+    "Bullish": 34,
+    "Bearish": 3,
+    "Neutral": 55
+  },
+  {
+    "Symbol": "BLAST",
+    "Bullish": 37,
+    "Bearish": 4,
+    "Neutral": 56
+  },
+  {
+    "Symbol": "OSMO",
+    "Bullish": 27,
+    "Bearish": 20,
+    "Neutral": 51
+  },
+  {
+    "Symbol": "ZETACHAIN",
+    "Bullish": 23,
+    "Bearish": 2,
+    "Neutral": 75
+  },
+  {
+    "Symbol": "VELO",
+    "Bullish": 43,
+    "Bearish": 3,
+    "Neutral": 44
+  },
+  {
+    "Symbol": "DNT",
+    "Bullish": 52,
+    "Bearish": 5,
+    "Neutral": 43
+  },
+  {
+    "Symbol": "ASM",
+    "Bullish": 23,
+    "Bearish": 5,
+    "Neutral": 71
+  },
+  {
+    "Symbol": "MPL",
+    "Bullish": 72,
+    "Bearish": 3,
+    "Neutral": 25
+  },
+  {
+    "Symbol": "SHIB",
+    "Bullish": 58,
+    "Bearish": 2,
+    "Neutral": 37
+  },
+  {
+    "Symbol": "ME",
+    "Bullish": 16,
+    "Bearish": 4,
+    "Neutral": 77
+  },
+  {
+    "Symbol": "OOKI",
+    "Bullish": 50,
+    "Bearish": 1,
+    "Neutral": 42
+  },
+  {
+    "Symbol": "RARI",
+    "Bullish": 46,
+    "Bearish": 5,
+    "Neutral": 49
+  },
+  {
+    "Symbol": "BLZ",
+    "Bullish": 49,
+    "Bearish": 1,
+    "Neutral": 48
+  },
+  {
+    "Symbol": "PRQ",
+    "Bullish": 21,
+    "Bearish": 1,
+    "Neutral": 77
+  },
+  {
+    "Symbol": "WBTC",
+    "Bullish": 31,
+    "Bearish": 5,
+    "Neutral": 63
+  },
+  {
+    "Symbol": "PNUT",
+    "Bullish": 56,
+    "Bearish": 3,
+    "Neutral": 38
+  },
+  {
+    "Symbol": "RPL",
+    "Bullish": 36,
+    "Bearish": 1,
+    "Neutral": 63
+  },
+  {
+    "Symbol": "DRIFT",
+    "Bullish": 35,
+    "Bearish": 8,
+    "Neutral": 56
+  },
+  {
+    "Symbol": "TRB",
+    "Bullish": 29,
+    "Bearish": 2,
+    "Neutral": 68
+  },
+  {
+    "Symbol": "CRO",
+    "Bullish": 71,
+    "Bearish": 5,
+    "Neutral": 24
+  },
+  {
+    "Symbol": "TRU",
+    "Bullish": 37,
+    "Bearish": 4,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "APE",
+    "Bullish": 36,
+    "Bearish": 5,
+    "Neutral": 56
+  },
+  {
+    "Symbol": "DOT",
+    "Bullish": 30,
+    "Bearish": 5,
+    "Neutral": 61
+  },
+  {
+    "Symbol": "FORT",
+    "Bullish": 56,
+    "Bearish": 4,
+    "Neutral": 39
+  },
+  {
+    "Symbol": "DAI",
+    "Bullish": 43,
+    "Bearish": 5,
+    "Neutral": 46
+  },
+  {
+    "Symbol": "FARM",
+    "Bullish": 38,
+    "Bearish": 3,
+    "Neutral": 56
+  },
+  {
+    "Symbol": "SHDW",
+    "Bullish": 33,
+    "Bearish": 9,
+    "Neutral": 56
+  },
+  {
+    "Symbol": "ADA",
+    "Bullish": 39,
+    "Bearish": 6,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "WCFG",
+    "Bullish": 47,
+    "Bearish": 7,
+    "Neutral": 45
+  },
+  {
+    "Symbol": "API3",
+    "Bullish": 24,
+    "Bearish": 11,
+    "Neutral": 65
+  },
+  {
+    "Symbol": "IOTX",
+    "Bullish": 37,
+    "Bearish": 6,
+    "Neutral": 24
+  },
+  {
+    "Symbol": "KARRAT",
+    "Bullish": 66,
+    "Bearish": 3,
+    "Neutral": 28
+  },
+  {
+    "Symbol": "MULTI",
+    "Bullish": 29,
+    "Bearish": 2,
+    "Neutral": 68
+  },
+  {
+    "Symbol": "PEPE",
+    "Bullish": 60,
+    "Bearish": 6,
+    "Neutral": 23
+  },
+  {
+    "Symbol": "SPELL",
+    "Bullish": 32,
+    "Bearish": 8,
+    "Neutral": 57
+  },
+  {
+    "Symbol": "UMA",
+    "Bullish": 34,
+    "Bearish": 16,
+    "Neutral": 45
+  },
+  {
+    "Symbol": "LINK",
+    "Bullish": 42,
+    "Bearish": 2,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "INDEX",
+    "Bullish": 27,
+    "Bearish": 5,
+    "Neutral": 68
+  },
+  {
+    "Symbol": "GALA",
+    "Bullish": 59,
+    "Bearish": 3,
+    "Neutral": 34
+  },
+  {
+    "Symbol": "REN",
+    "Bullish": 51,
+    "Bearish": 4,
+    "Neutral": 37
+  },
+  {
+    "Symbol": "ARKM",
+    "Bullish": 27,
+    "Bearish": 1,
+    "Neutral": 71
+  },
+  {
+    "Symbol": "IDEX",
+    "Bullish": 35,
+    "Bearish": 2,
+    "Neutral": 60
+  },
+  {
+    "Symbol": "ROSE",
+    "Bullish": 33,
+    "Bearish": 11,
+    "Neutral": 54
+  },
+  {
+    "Symbol": "LTC",
+    "Bullish": 47,
+    "Bearish": 6,
+    "Neutral": 45
+  },
+  {
+    "Symbol": "STG",
+    "Bullish": 38,
+    "Bearish": 5,
+    "Neutral": 56
+  },
+  {
+    "Symbol": "ZK",
+    "Bullish": 7,
+    "Bearish": 3,
+    "Neutral": 89
+  },
+  {
+    "Symbol": "BAND",
+    "Bullish": 41,
+    "Bearish": 10,
+    "Neutral": 46
+  },
+  {
+    "Symbol": "BONK",
+    "Bullish": 54,
+    "Bearish": 6,
+    "Neutral": 36
+  },
+  {
+    "Symbol": "SOL",
+    "Bullish": 35,
+    "Bearish": 4,
+    "Neutral": 57
+  },
+  {
+    "Symbol": "CRPT",
+    "Bullish": 71,
+    "Bearish": 0,
+    "Neutral": 29
+  },
+  {
+    "Symbol": "ZRO",
+    "Bullish": 30,
+    "Bearish": 2,
+    "Neutral": 67
+  },
+  {
+    "Symbol": "WLUNA",
+    "Bullish": 44,
+    "Bearish": 1,
+    "Neutral": 55
+  },
+  {
+    "Symbol": "CTSI",
+    "Bullish": 36,
+    "Bearish": 1,
+    "Neutral": 61
+  },
+  {
+    "Symbol": "DOGE",
+    "Bullish": 60,
+    "Bearish": 3,
+    "Neutral": 32
+  },
+  {
+    "Symbol": "TIME",
+    "Bullish": 46,
+    "Bearish": 5,
+    "Neutral": 49
+  },
+  {
+    "Symbol": "BAL",
+    "Bullish": 39,
+    "Bearish": 8,
+    "Neutral": 48
+  },
+  {
+    "Symbol": "BNT",
+    "Bullish": 46,
+    "Bearish": 4,
+    "Neutral": 50
+  },
+  {
+    "Symbol": "TNSR",
+    "Bullish": 26,
+    "Bearish": 0,
+    "Neutral": 17
+  },
+  {
+    "Symbol": "MATIC",
+    "Bullish": 32,
+    "Bearish": 7,
+    "Neutral": 60
+  }
+]
