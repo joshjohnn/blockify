@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -8,6 +9,12 @@ import { usePathname, useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [isChatOpen, setIsChatOpen] = useState(false); // AI Chatbot toggle state
+  const [messages, setMessages] = useState([
+    { role: "assistant", content: "Welcome to Blocky, your AI research tool!" },
+  ]);
+  const [input, setInput] = useState("");
+
   const router = useRouter();
   const currentPath = usePathname();
 
@@ -18,70 +25,129 @@ const Navbar = () => {
 
     if (searchQuery.trim() === "") return; // Prevent empty search
 
-    // Send search query to your backend (OpenAI or custom backend)
-    try {
-      const response = await fetch("/api/process-search", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: searchQuery }),
-      });
-      const data = await response.json();
-      console.log("Backend response:", data);
-    } catch (error) {
-      console.error("Error sending search query:", error);
-    }
-
     // Navigate to the Explore page with the search query
     router.push(`/explore/${searchQuery}`);
   };
 
+  const handleSendMessage = async () => {
+    if (!input.trim()) return;
+
+    const userMessage = { role: "user", content: input };
+    setMessages((prev) => [...prev, userMessage]);
+    setInput("");
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: [...messages, userMessage] }),
+      });
+
+      const data = await response.json();
+      const assistantMessage = { role: "assistant", content: data.message };
+      setMessages((prev) => [...prev, assistantMessage]);
+    } catch (error) {
+      console.error("Error communicating with chatbot:", error);
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: "Sorry, something went wrong!" },
+      ]);
+    }
+  };
+
   return (
-    <header className="relative w-full flex items-center justify-between px-8 py-4 border-b border-gray-700">
-      <div className="flex items-center gap-2">
-        <Image src={logo} alt="Blockify Logo" className="mr-1" width={16} height={16} />
-        <div className="text-green-500 text-xl font-bold pr-4">Blockify</div>
-      </div>
+    <>
+      <header className="relative w-full flex items-center justify-between px-8 py-4 border-b border-gray-700">
+        {/* Blockify Logo */}
+        <div className="flex items-center gap-2">
+          <Image src={logo} alt="Blockify Logo" className="mr-1" width={16} height={16} />
+          <div className="text-green-500 text-xl font-bold pr-4">Blockify</div>
+        </div>
 
-      {/* Search Bar */}
-      <form onSubmit={handleSearch} className="flex gap-4">
-        <input
-          type="text"
-          placeholder="Search Cryptocurrency"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-[25%] bg-gray-800 text-white text-sm px-4 py-1 rounded-lg outline-none border border-gray-700 focus:border-green-500"
-        />
-        <button
-          type="submit"
-          className="bg-green-500 text-white text-sm px-4 py-1 rounded-lg"
-        >
-          Search
-        </button>
-      </form>
+        {/* Search Bar with Ask Blocky */}
+        <form onSubmit={handleSearch} className="flex items-center gap-4 w-[50%]">
+          <input
+            type="text"
+            placeholder="Search Cryptocurrency"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="flex-grow bg-gray-800 text-white text-sm px-4 py-2 rounded-lg outline-none border border-gray-700 focus:border-green-500"
+          />
+          <button
+            type="button"
+            onClick={() => setIsChatOpen(true)}
+            className="bg-gray-800 text-white text-sm px-4 py-2 rounded-lg outline-none border border-gray-700 hover:bg-green-500"
+          >
+            Ask Blocky
+          </button>
+        </form>
 
-      {/* Navigation Links */}
-      <nav className="flex gap-8 text-sm">
-        {["/", "/portfolio", "/explore", "/education"].map((path, index) => (
-          <div key={index} className="relative">
-            <Link
-              href={path}
-              className={`${
-                isActive(path) ? "text-green-500" : "text-white"
-              } hover:text-green-500`}
+        {/* Navigation Links */}
+        <nav className="flex gap-8 text-sm">
+          {["/", "/portfolio", "/explore", "/education"].map((path, index) => (
+            <div key={index} className="relative">
+              <Link
+                href={path}
+                className={`${
+                  isActive(path) ? "text-green-500" : "text-white"
+                } hover:text-green-500`}
+              >
+                {path === "/"
+                  ? "Home"
+                  : path.charAt(1).toUpperCase() + path.slice(2)}
+              </Link>
+              <span
+                className={`absolute bottom-[-23px] left-0 h-[2px] w-full bg-green-500 transform scale-x-0 transition-transform duration-300 ease-in-out ${
+                  isActive(path) ? "scale-x-100" : ""
+                } hover:scale-x-100`}
+              />
+            </div>
+          ))}
+        </nav>
+      </header>
+
+      {/* Chatbot Modal */}
+      {isChatOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
+          <div className="bg-gray-900 text-white rounded-xl shadow-lg w-3/4 max-w-2xl p-6 relative">
+            <button
+              onClick={() => setIsChatOpen(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white text-lg"
             >
-              {path === "/"
-                ? "Home"
-                : path.charAt(1).toUpperCase() + path.slice(2)}
-            </Link>
-            <span
-              className={`absolute bottom-[-23px] left-0 h-[2px] w-full bg-green-500 transform scale-x-0 transition-transform duration-300 ease-in-out ${
-                isActive(path) ? "scale-x-100" : ""
-              } hover:scale-x-100`}
-            />
+              ✖
+            </button>
+            <h2 className="text-lg font-bold mb-4">Blocky - AI Research Tool</h2>
+            <div className="overflow-y-auto max-h-64 mb-4">
+              {messages.map((msg, index) => (
+                <div
+                  key={index}
+                  className={`mb-2 ${
+                    msg.role === "assistant" ? "text-green-400" : "text-gray-200"
+                  }`}
+                >
+                  {msg.content}
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Type your question here..."
+                className="flex-grow bg-gray-800 text-white px-4 py-2 rounded-lg outline-none border border-gray-700 focus:border-green-500"
+              />
+              <button
+                onClick={handleSendMessage}
+                className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg"
+              >
+                Send
+              </button>
+            </div>
           </div>
-        ))}
-      </nav>
-    </header>
+        </div>
+      )}
+    </>
   );
 };
 
