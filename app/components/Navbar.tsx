@@ -19,7 +19,7 @@ const Navbar = () => {
         placeholder="$EXAMPL"
         className="w-[25%] bg-gray-800 text-white text-sm px-4 py-1 rounded-lg outline-none border border-gray-700 focus:border-green-500"
       />
-      
+
       <div className="flex flex-grow" />
 
       <nav className="flex gap-8 text-sm relative">
@@ -33,7 +33,7 @@ const Navbar = () => {
             Home
           </Link>
           <span
-            className={`absolute bottom-[-1px] left-0 h-[2px] w-full bg-green-500 transform scale-x-0 transition-transform duration-300 ease-in-out ${
+            className={`absolute bottom-[-23px] left-0 h-[2px] w-full bg-green-500 transform scale-x-0 transition-transform duration-300 ease-in-out ${
               isActive('/') ? 'scale-x-100' : ''
             } hover:scale-x-100`}
           />
@@ -48,7 +48,7 @@ const Navbar = () => {
             Portfolio
           </Link>
           <span
-            className={`absolute bottom-[-1px] left-0 h-[2px] w-full bg-green-500 transform scale-x-0 transition-transform duration-300 ease-in-out ${
+            className={`absolute bottom-[-23px] left-0 h-[2px] w-full bg-green-500 transform scale-x-0 transition-transform duration-300 ease-in-out ${
               isActive('/portfolio') ? 'scale-x-100' : ''
             } hover:scale-x-100`}
           />
@@ -63,7 +63,7 @@ const Navbar = () => {
             Explore
           </Link>
           <span
-            className={`absolute bottom-[-1px] left-0 h-[2px] w-full bg-green-500 transform scale-x-0 transition-transform duration-300 ease-in-out ${
+            className={`absolute bottom-[-23px] left-0 h-[2px] w-full bg-green-500 transform scale-x-0 transition-transform duration-300 ease-in-out ${
               isActive('/explore') ? 'scale-x-100' : ''
             } hover:scale-x-100`}
           />
@@ -78,7 +78,7 @@ const Navbar = () => {
             Education
           </Link>
           <span
-            className={`absolute bottom-[-1px] left-0 h-[2px] w-full bg-green-500 transform scale-x-0 transition-transform duration-300 ease-in-out ${
+            className={`absolute bottom-[-23px] left-0 h-[2px] w-full bg-green-500 transform scale-x-0 transition-transform duration-300 ease-in-out ${
               isActive('/education') ? 'scale-x-100' : ''
             } hover:scale-x-100`}
           />
