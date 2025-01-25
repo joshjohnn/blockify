@@ -1,13 +1,7 @@
 "use client";
 
-<<<<<<< Updated upstream
 import Link from 'next/link';
-
-
-import React from "react";
-=======
 import React, { useEffect } from "react";
->>>>>>> Stashed changes
 import BitcoinChart from "./components/BitcoinChart";
 import Watchlist from "./components/Watchlist";
 import Navbar from './components/Navbar';
