@@ -9,7 +9,7 @@ export async function GET(req) {
     const db = client.db("test"); // Replace with your database name
     console.log("Database selected:", db.databaseName);
 
-    const collection = db.collection("test_collection"); // Replace with your collection name
+    const collection = db.collection("crypto_data"); // Replace with your collection name
     console.log("Collection selected:", collection.collectionName);
 
     const data = await collection.find({}).toArray();
