@@ -1,6 +1,5 @@
 "use client";
 
-import Link from 'next/link';
 import React, { useEffect } from "react";
 import BitcoinChart from "./components/BitcoinChart";
 import Watchlist from "./components/Watchlist";
@@ -25,8 +24,6 @@ export default function Home() {
       }
     }, []);
       
-
-
 
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
