@@ -1,10 +1,9 @@
-
 "use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/icons/logo.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 const Navbar = () => {
@@ -15,6 +14,33 @@ const Navbar = () => {
   ]);
   const [input, setInput] = useState("");
 
+  useEffect(() => {
+    const fetchData = async () => {
+
+      try {
+        const res = await fetch("http://localhost:3000/api/db");
+        const data_db = await res.json();
+        console.log("MONGODB: " + data_db);
+
+
+
+        const response = await fetch("http://localhost:3000/api/chatbot", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({input}),
+        });
+
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  
   const router = useRouter();
   const currentPath = usePathname();
 
@@ -37,10 +63,10 @@ const Navbar = () => {
     setInput("");
 
     try {
-      const response = await fetch("/api/chat", {
+      const response = await fetch("/api/chatbot", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: [...messages, userMessage] }),
+        body: JSON.stringify({ input: input}),
       });
 
       const data = await response.json();

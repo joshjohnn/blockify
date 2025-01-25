@@ -8,31 +8,6 @@ import TopMovers from "./components/TopMovers"; // Import TopMovers component
 import MarketTrends from "./components/MarketTrends"; // Import MarketTrends component
 
 export default function Home() {
-  useEffect(() => {
-    const fetchData = async () => {
-
-      try {
-        const res = await fetch("http://localhost:3000/api/db");
-        const data_db = await res.json();
-        console.log("MONGODB: "+ data_db);
-  
-
-
-        const response = await fetch("http://localhost:3000/api/chatbot", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ticker: "PEPE" }),
-        });
-
-        const data = await response.json();
-        console.log(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
