@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react";
 
+interface Prices {
+  bitcoin: string | null;
+  ethereum: string | null;
+  solana: string | null;
+  cardano: string | null;
+}
 
 export default function Watchlist() {
-  const [prices, setPrices] = useState({
+  const [prices, setPrices] = useState<Prices>({
     bitcoin: null,
     ethereum: null,
-    xrp: null,
-    tether: null,
+    solana: null,
+    cardano: null,
   });
 
   useEffect(() => {
+    // Open a WebSocket connection to CoinCap API
     const socket = new WebSocket(
-      "wss://ws.coincap.io/prices?assets=bitcoin,ethereum,xrp,tether"
+      "wss://ws.coincap.io/prices?assets=bitcoin,ethereum,solana,cardano"
     );
 
     socket.onmessage = (message) => {
@@ -35,25 +42,33 @@ export default function Watchlist() {
         <li className="flex justify-between border-b border-gray-700 pb-2">
           Bitcoin (BTC)
           <span className="text-green-500">
-            {prices.bitcoin ? `$${parseFloat(prices.bitcoin).toFixed(2)}` : "Loading..."}
+            {prices.bitcoin
+              ? `$${parseFloat(prices.bitcoin).toFixed(2)}`
+              : "Loading..."}
           </span>
         </li>
         <li className="flex justify-between border-b border-gray-700 pb-2">
           Ethereum (ETH)
           <span className="text-green-500">
-            {prices.ethereum ? `$${parseFloat(prices.ethereum).toFixed(2)}` : "Loading..."}
+            {prices.ethereum
+              ? `$${parseFloat(prices.ethereum).toFixed(2)}`
+              : "Loading..."}
           </span>
         </li>
         <li className="flex justify-between border-b border-gray-700 pb-2">
-          XRP (XRP)
+          Solana (SOL)
           <span className="text-green-500">
-            {prices.xrp ? `$${parseFloat(prices.xrp).toFixed(2)}` : "Loading..."}
+            {prices.solana
+              ? `$${parseFloat(prices.solana).toFixed(2)}`
+              : "Loading..."}
           </span>
         </li>
         <li className="flex justify-between border-b border-gray-700 pb-2">
-          Tether (USDT)
+          Cardano (ADA)
           <span className="text-green-500">
-            {prices.tether ? `$${parseFloat(prices.tether).toFixed(2)}` : "Loading..."}
+            {prices.cardano
+              ? `$${parseFloat(prices.cardano).toFixed(2)}`
+              : "Loading..."}
           </span>
         </li>
       </ul>
