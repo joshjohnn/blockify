@@ -1,9 +1,13 @@
 "use client";
 
+<<<<<<< Updated upstream
 import Link from 'next/link';
 
 
 import React from "react";
+=======
+import React, { useEffect } from "react";
+>>>>>>> Stashed changes
 import BitcoinChart from "./components/BitcoinChart";
 import Watchlist from "./components/Watchlist";
 import Navbar from './components/Navbar';
@@ -11,6 +15,25 @@ import Navbar from './components/Navbar';
 
 
 export default function Home() {
+
+  useEffect(() => {
+    try {
+      const response =  fetch("http://localhost:3000/api/chatbot", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ticker:'PEPE' }),
+      });
+
+      const data = response;
+      console.log(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }, []);
+      
+
+
+
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
       <Navbar />
