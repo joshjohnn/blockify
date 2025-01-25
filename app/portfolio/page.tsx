@@ -26,6 +26,27 @@ ChartJS.register(
 );
 
 export default function Portfolio() {
+
+  let ownedStocks = [
+    {
+      name: "BTC",
+      quantity: 30,
+      price: 10000,
+    },
+    {
+      name: "ETH",
+      quantity: 30,
+      price: 300
+    },
+    {
+      name: "SOL",
+      quantity: 40,
+      price: 300
+    },
+    
+
+  ]
+
   const portfolioData = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
     datasets: [
@@ -40,12 +61,12 @@ export default function Portfolio() {
   };
 
   const compositionData = {
-    labels: ["BTC", "HAWKTUA"],
+    labels: ["BTC", "ETH", "SOL"],
     datasets: [
       {
         label: "Composition",
-        data: [70, 30],
-        backgroundColor: ["#22c55e", "#f97316"],
+        data: [30, 30, 40],
+        backgroundColor: ["#22c55e", "#f97316", "#f9c916"],
         hoverOffset: 4,
       },
     ],
@@ -62,6 +83,7 @@ export default function Portfolio() {
         <div className="col-span-2">
           <div className="bg-gray-900 rounded-xl p-6 shadow-lg">
             <h2 className="mb-4 text-lg">Portfolio Name</h2>
+
             <div className="w-full">
               <Line
                 data={portfolioData}
@@ -69,6 +91,7 @@ export default function Portfolio() {
                 height={150}
               />
             </div>
+
             <div className="flex justify-around mt-4 text-sm text-gray-400">
               <span>1D</span>
               <span>1W</span>
@@ -79,12 +102,28 @@ export default function Portfolio() {
               <span>ALL</span>
             </div>
           </div>
-          <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6">
-            <h2 className="mb-4 text-lg">Composition</h2>
-            <div className="w-1/2 mx-auto">
-              <Doughnut data={compositionData} options={{ responsive: true }} />
+          <div className="w-full flex flex-row">
+            <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6 mr-6 w-1/2">
+              <h2 className="mb-4 text-lg">Composition</h2>
+              <div className="w-[75%] mx-auto">
+                <Doughnut className="color-white" data={compositionData} options={{ responsive: true }} />
+              </div>
+            </div>
+
+            <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6 w-1/2">
+              <h2 className="mb-4 text-lg">Details</h2>
+{/* put stock details here */}
+            {ownedStocks.map((stock, index) => ( 
+              <div key={index} className="flex justify-between">
+                <span>{stock.name}</span>
+                <span>{stock.quantity}</span>
+                <span>{stock.price}</span>
+              </div>
+            ))}
+
             </div>
           </div>
+
         </div>
 
         {/* Portfolio Scores Split into Two Equal Boxes */}
