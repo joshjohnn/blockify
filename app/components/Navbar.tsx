@@ -16,18 +16,15 @@ const Navbar = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-
       try {
         const res = await fetch("http://localhost:3000/api/db");
         const data_db = await res.json();
         console.log("MONGODB: " + data_db);
 
-
-
         const response = await fetch("http://localhost:3000/api/chatbot", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({input}),
+          body: JSON.stringify({ input }),
         });
 
         const data = await response.json();
@@ -40,7 +37,6 @@ const Navbar = () => {
     fetchData();
   }, []);
 
-  
   const router = useRouter();
   const currentPath = usePathname();
 
@@ -51,8 +47,8 @@ const Navbar = () => {
 
     if (searchQuery.trim() === "") return; // Prevent empty search
 
-    // Navigate to the Explore page with the search query
-    router.push(`/explore/${searchQuery}`);
+    // Navigate to the Trade page with the search query
+    router.push(`/trade/${searchQuery}`);
   };
 
   const handleSendMessage = async () => {
@@ -66,7 +62,7 @@ const Navbar = () => {
       const response = await fetch("/api/chatbot", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ input: input}),
+        body: JSON.stringify({ input: input }),
       });
 
       const data = await response.json();
@@ -110,7 +106,12 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <nav className="flex gap-8 text-sm">
-          {["/", "/portfolio", "/explore", "/education"].map((path, index) => (
+          {[
+            { path: "/", label: "Home" },
+            { path: "/portfolio", label: "Portfolio" },
+            { path: "/explore", label: "Trade" }, // Renamed Explore to Trade
+            { path: "/education", label: "Education" },
+          ].map(({ path, label }, index) => (
             <div key={index} className="relative">
               <Link
                 href={path}
@@ -118,9 +119,7 @@ const Navbar = () => {
                   isActive(path) ? "text-green-500" : "text-white"
                 } hover:text-green-500`}
               >
-                {path === "/"
-                  ? "Home"
-                  : path.charAt(1).toUpperCase() + path.slice(2)}
+                {label}
               </Link>
               <span
                 className={`absolute bottom-[-23px] left-0 h-[2px] w-full bg-green-500 transform scale-x-0 transition-transform duration-300 ease-in-out ${

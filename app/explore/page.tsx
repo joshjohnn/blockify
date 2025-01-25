@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
 
 export default function Trade() {
-  const fullText = "        Blockchain       Made       Simple ";
+  const fullText = "Crrypto    Made     Clear ";
   const [letters, setLetters] = useState<string[]>([]);
   const [activeAction, setActiveAction] = useState<"buy" | "sell" | "convert">(
     "buy"
@@ -50,7 +50,7 @@ export default function Trade() {
       <main className="flex-grow p-8 grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Left Section with Animated Text */}
         <div className="col-span-1 flex flex-col justify-center">
-          <div className="leading-tight max-w-[90%]">
+          <div className="leading-tight max-w-[90%] whitespace-normal break-words">
             {letters.map((letter, index) => (
               <motion.span
                 key={index}
