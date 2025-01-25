@@ -1,10 +1,11 @@
 "use client";
 
-
 import React, { useEffect } from "react";
 import BitcoinChart from "./components/BitcoinChart";
 import Watchlist from "./components/Watchlist";
 import Navbar from "./components/Navbar";
+import TopMovers from "./components/TopMovers"; // Import TopMovers component
+import MarketTrends from "./components/MarketTrends"; // Import MarketTrends component
 
 export default function Home() {
   useEffect(() => {
@@ -43,13 +44,15 @@ export default function Home() {
 
         {/* Split Overall Market Section */}
         <div className="col-span-3 grid grid-cols-3 gap-6">
+          {/* Top Movers */}
           <div className="bg-gray-900 rounded-lg p-4 border border-gray-700 col-span-2">
-            <h2 className="text-lg font-bold text-blue-500 mb-4">Market Data</h2>
-            <div className="bg-gray-800 h-40 rounded-lg"></div>
+            {/* Only include TopMovers component */}
+            <TopMovers />
           </div>
+
+          {/* Market Trends */}
           <div className="bg-gray-900 rounded-lg p-4 border border-gray-700">
-            <h2 className="text-lg font-bold text-blue-500 mb-4">Market Trends</h2>
-            <div className="bg-gray-800 h-[calc(100%-20px)] rounded-lg"></div>
+            <MarketTrends />
           </div>
         </div>
       </main>
