@@ -1,12 +1,12 @@
-'use client'
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
-  const router = useRouter(); // Move useRouter inside the component
+  const currentPath = usePathname();
 
-  const currentPath = router.pathname; // Get current path
-  const isActive = (path) => currentPath === path;
+  const isActive = (path) =>  { 
+    console.log("hello, currentPath is: ", currentPath);
+    return currentPath === path};
 
   return (
     <header className="w-full flex items-center justify-between px-8 py-4 border-b border-gray-700">
@@ -19,41 +19,17 @@ const Navbar = () => {
       />
       <div className="flex flex-grow" />
       <nav className="flex gap-8 text-sm">
-        <Link href="/">
-          <a
-            className={`${
-              isActive('/') ? 'text-green-500' : 'text-white'
-            } hover:text-green-500`}
-          >
-            Home
-          </a>
+        <Link href="/" className={`${isActive('/') ? 'text-green-500' : 'text-white'} hover:text-green-500`}>
+          Home
         </Link>
-        <Link href="/portfolio">
-          <a
-            className={`${
-              isActive('/portfolio') ? 'text-green-500' : 'text-white'
-            } hover:text-green-500`}
-          >
-            Portfolio
-          </a>
+        <Link href="/portfolio" className={`${isActive('/portfolio') ? 'text-green-500' : 'text-white'} hover:text-green-500`}>
+          Portfolio
         </Link>
-        <Link href="/explore">
-          <a
-            className={`${
-              isActive('/explore') ? 'text-green-500' : 'text-white'
-            } hover:text-green-500`}
-          >
-            Explore
-          </a>
+        <Link href="/explore" className={`${isActive('/explore') ? 'text-green-500' : 'text-white'} hover:text-green-500`}>
+          Explore
         </Link>
-        <Link href="/education">
-          <a
-            className={`${
-              isActive('/education') ? 'text-green-500' : 'text-white'
-            } hover:text-green-500`}
-          >
-            Education
-          </a>
+        <Link href="/education" className={`${isActive('/education') ? 'text-green-500' : 'text-white'} hover:text-green-500`}>
+          Education
         </Link>
       </nav>
     </header>
