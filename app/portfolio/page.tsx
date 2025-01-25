@@ -43,7 +43,7 @@ export default function Portfolio() {
       quantity: 40,
       price: 300
     },
-    
+
 
   ]
 
@@ -106,20 +106,42 @@ export default function Portfolio() {
             <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6 mr-6 w-1/2">
               <h2 className="mb-4 text-lg">Composition</h2>
               <div className="w-[75%] mx-auto">
-                <Doughnut className="color-white" data={compositionData} options={{ responsive: true }} />
+
+                <Doughnut
+                  className="color-white"
+                  data={compositionData}
+                  options={{
+                    responsive: true,
+                    plugins: {
+                      legend: {
+                        labels: {
+                          color: "white", // Legend text color
+                        },
+                      },
+                      tooltip: {
+                        bodyColor: "white", // Tooltip body text color
+                        titleColor: "white", // Tooltip title text color
+                      },
+                    },
+                    layout: {
+                      padding: 20, // Optional: Adds padding around the chart
+                    },
+                  }}
+                />
+
               </div>
             </div>
 
             <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6 w-1/2">
               <h2 className="mb-4 text-lg">Details</h2>
-{/* put stock details here */}
-            {ownedStocks.map((stock, index) => ( 
-              <div key={index} className="flex justify-between">
-                <span>{stock.name}</span>
-                <span>{stock.quantity}</span>
-                <span>{stock.price}</span>
-              </div>
-            ))}
+              {/* put stock details here */}
+              {ownedStocks.map((stock, index) => (
+                <div key={index} className="flex justify-between">
+                  <span>{stock.name}</span>
+                  <span>{stock.quantity}</span>
+                  <span>{stock.price}</span>
+                </div>
+              ))}
 
             </div>
           </div>
