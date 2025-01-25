@@ -32,16 +32,33 @@ export default function Portfolio() {
       name: "BTC",
       quantity: 30,
       price: 10000,
+      sentiment : {
+        positive: 0.5,
+        negative: 0.3,
+        neutral: 0.2
+      }
     },
     {
       name: "ETH",
       quantity: 30,
-      price: 300
+      price: 300,
+
+      sentiment : {
+        positive: 0.5,
+        negative: 0.3,
+        neutral: 0.2
+      }
     },
     {
       name: "SOL",
       quantity: 40,
-      price: 300
+      price: 300,
+
+      sentiment : {
+        positive: 0.5,
+        negative: 0.3,
+        neutral: 0.2
+      }
     },
 
 
@@ -134,13 +151,23 @@ export default function Portfolio() {
 
             <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6 w-1/2">
               <h2 className="mb-4 text-lg">Details</h2>
+
+              
               {/* put stock details here */}
               {ownedStocks.map((stock, index) => (
-                <div key={index} className="flex justify-between">
-                  <span>{stock.name}</span>
-                  <span>{stock.quantity}</span>
-                  <span>{stock.price}</span>
+                <div  key={index}>
+                  <div className="flex mt-4 gap-8">
+                    <span className="text-xs w-[1/2]">{stock.name}</span>
+                    <span className="text-xs w-[1/4]">{stock.quantity}</span>
+                    <span className="text-xs w-[1/4]">{stock.price}</span>
+                  </div>
+
+                  <div className="w-full h-[2px] bg-gray-700 mt-4"> 
+                    
+                    </div>
+
                 </div>
+
               ))}
 
             </div>
