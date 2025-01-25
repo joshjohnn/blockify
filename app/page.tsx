@@ -1,5 +1,5 @@
 "use client";
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 
 import React, { useEffect } from "react";
 import BitcoinChart from "./components/BitcoinChart";
