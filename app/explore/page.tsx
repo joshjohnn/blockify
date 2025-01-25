@@ -5,8 +5,16 @@ import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
 
 export default function Trade() {
-  const fullText = "        Blockchain       Made       Simple "; // Use a properly spaced string
+  const fullText = "        Blockchain       Made       Simple ";
   const [letters, setLetters] = useState<string[]>([]);
+  const [activeAction, setActiveAction] = useState<"buy" | "sell" | "convert">(
+    "buy"
+  ); // Tracks the selected action
+  const [amount, setAmount] = useState<string>(""); // Tracks the amount entered
+  const [crypto, setCrypto] = useState<string>("Bitcoin (BTC)"); // Tracks the selected crypto
+  const [recentActivity, setRecentActivity] = useState<
+    { type: string; amount: string; asset: string; date: string }[]
+  >([]);
 
   useEffect(() => {
     let index = 0;
@@ -17,9 +25,23 @@ export default function Trade() {
       } else {
         clearInterval(interval);
       }
-    }, 100); // Adjust speed of the animation here
+    }, 100);
     return () => clearInterval(interval);
   }, []);
+
+  const handleAction = () => {
+    if (!amount) return; // Prevent adding if no amount is entered
+    const actionType = activeAction.charAt(0).toUpperCase() + activeAction.slice(1);
+    const newActivity = {
+      type: actionType,
+      amount: `${activeAction === "sell" ? "-" : "+"}${amount} USD`,
+      asset: crypto,
+      date: new Date().toLocaleDateString(),
+    };
+
+    setRecentActivity((prev) => [newActivity, ...prev]); // Add new activity to the top of the list
+    setAmount(""); // Clear the amount input
+  };
 
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
@@ -52,13 +74,34 @@ export default function Trade() {
         <div className="col-span-1 bg-gray-800 rounded-lg p-6">
           <h2 className="text-white font-bold text-xl mb-4">Buy / Sell</h2>
           <div className="flex mb-4">
-            <button className="bg-green-500 text-white py-2 px-4 rounded-lg mr-2">
+            <button
+              onClick={() => setActiveAction("buy")}
+              className={`py-2 px-4 rounded-lg mr-2 ${
+                activeAction === "buy"
+                  ? "bg-green-500 text-white"
+                  : "bg-gray-700 text-white hover:bg-green-500"
+              }`}
+            >
               Buy
             </button>
-            <button className="bg-gray-700 text-white py-2 px-4 rounded-lg mr-2">
+            <button
+              onClick={() => setActiveAction("sell")}
+              className={`py-2 px-4 rounded-lg mr-2 ${
+                activeAction === "sell"
+                  ? "bg-green-500 text-white"
+                  : "bg-gray-700 text-white hover:bg-green-500"
+              }`}
+            >
               Sell
             </button>
-            <button className="bg-gray-700 text-white py-2 px-4 rounded-lg">
+            <button
+              onClick={() => setActiveAction("convert")}
+              className={`py-2 px-4 rounded-lg ${
+                activeAction === "convert"
+                  ? "bg-green-500 text-white"
+                  : "bg-gray-700 text-white hover:bg-green-500"
+              }`}
+            >
               Convert
             </button>
           </div>
@@ -68,17 +111,26 @@ export default function Trade() {
               type="text"
               className="bg-gray-900 text-white rounded-lg w-full py-2 px-4"
               placeholder="0.00"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
             />
           </div>
           <div className="mb-4">
             <label className="block text-gray-400 text-sm mb-2">Crypto</label>
-            <select className="bg-gray-900 text-white rounded-lg w-full py-2 px-4">
+            <select
+              className="bg-gray-900 text-white rounded-lg w-full py-2 px-4"
+              value={crypto}
+              onChange={(e) => setCrypto(e.target.value)}
+            >
               <option>Bitcoin (BTC)</option>
               <option>Ethereum (ETH)</option>
               <option>Solana (SOL)</option>
             </select>
           </div>
-          <button className="bg-blue-500 text-white w-full py-2 px-4 rounded-lg">
+          <button
+            onClick={handleAction}
+            className="bg-blue-500 text-white w-full py-2 px-4 rounded-lg"
+          >
             Review Order
           </button>
         </div>
@@ -96,24 +148,14 @@ export default function Trade() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="py-1">Sent</td>
-                <td className="py-1">-52.26 USD</td>
-                <td className="py-1">Ethereum (ETH)</td>
-                <td className="py-1">Jul 31, 2023</td>
-              </tr>
-              <tr>
-                <td className="py-1">Bought</td>
-                <td className="py-1">+50.00 USD</td>
-                <td className="py-1">Bitcoin (BTC)</td>
-                <td className="py-1">Jul 17, 2023</td>
-              </tr>
-              <tr>
-                <td className="py-1">Converted</td>
-                <td className="py-1">+6.28 USD</td>
-                <td className="py-1">Ethereum (ETH)</td>
-                <td className="py-1">Jul 18, 2023</td>
-              </tr>
+              {recentActivity.map((activity, index) => (
+                <tr key={index}>
+                  <td className="py-1">{activity.type}</td>
+                  <td className="py-1">{activity.amount}</td>
+                  <td className="py-1">{activity.asset}</td>
+                  <td className="py-1">{activity.date}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
