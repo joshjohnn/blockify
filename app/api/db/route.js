@@ -1,16 +1,28 @@
 import clientPromise from "../../lib/mongodb";
 
-export default async function handler(req, res) {
+export async function GET(req) {
   try {
-    const client = await clientPromise;
-    const db = client.db("your-database-name");
+    console.log("Connecting to MongoDB...");
+    const client = await clientPromise; // Ensure this is resolving correctly
+    console.log("Connected to MongoDB.");
 
-    const collection = db.collection("your-collection-name");
-    const documents = await collection.find({}).toArray();
+    const db = client.db("test"); // Replace with your database name
+    console.log("Database selected:", db.databaseName);
 
-    res.status(200).json({ success: true, data: documents });
+    const collection = db.collection("test_collection"); // Replace with your collection name
+    console.log("Collection selected:", collection.collectionName);
+
+    const data = await collection.find({}).toArray();
+    console.log("Data fetched:", data);
+
+    return new Response(JSON.stringify(data), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false, message: "Server error" });
+    console.error("Error occurred:", error.message);
+    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
+      status: 500,
+    });
   }
 }
