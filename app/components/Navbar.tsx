@@ -3,39 +3,32 @@
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/icons/logo.svg";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false); // Search modal toggle state
+  const [searchResults, setSearchResults] = useState( 
+{
+      name: "Bitcoin",
+      price: 30000,
+      description: "Bitcoin is a decentralized digital currency.",
+      price_change_24h: -2.5,
+      relatedStocks: [
+        {
+          name: "",
+          price: 100,
+        }
+      ],
+      tradingPlatforms: ["Binance", "Coinbase", "Kraken"],
+ } ); // To hold search results
+
   const [isChatOpen, setIsChatOpen] = useState(false); // AI Chatbot toggle state
   const [messages, setMessages] = useState([
     { role: "assistant", content: "Welcome to Blocky, your AI research tool!" },
   ]);
   const [input, setInput] = useState("");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch("http://localhost:3000/api/db");
-        const data_db = await res.json();
-        console.log("MONGODB: " + data_db);
-
-        const response = await fetch("http://localhost:3000/api/chatbot", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ input }),
-        });
-
-        const data = await response.json();
-        console.log(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   const router = useRouter();
   const currentPath = usePathname();
@@ -47,8 +40,22 @@ const Navbar = () => {
 
     if (searchQuery.trim() === "") return; // Prevent empty search
 
-    // Navigate to the Trade page with the search query
-    router.push(`/trade/${searchQuery}`);
+    try {
+      const response = await fetch("http://localhost:3000/api/relatedStocks", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ input: searchQuery }),
+      });
+
+      let data = await response.json();
+      data = JSON.parse(data.message);
+      console.log(data.crypto);
+
+      setSearchResults(data.crypto || []); // Update search results
+      setIsSearchModalOpen(true); // Open search modal
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   const handleSendMessage = async () => {
@@ -62,7 +69,7 @@ const Navbar = () => {
       const response = await fetch("/api/chatbot", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ input: input }),
+        body: JSON.stringify({ input }),
       });
 
       const data = await response.json();
@@ -130,6 +137,73 @@ const Navbar = () => {
           ))}
         </nav>
       </header>
+
+{/* Search Results Modal */}
+{isSearchModalOpen && (
+  <div className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50">
+    <div className="bg-gray-900 text-white rounded-xl shadow-lg w-3/4 max-w-2xl p-6 relative">
+      <button
+        onClick={() => setIsSearchModalOpen(false)}
+        className="absolute top-4 right-4 text-gray-400 hover:text-white text-lg"
+      >
+        ✖
+      </button>
+      <h2 className="text-lg font-bold mb-4">Search Results</h2>
+
+      {searchResults ? (
+        <div className="text-sm text-gray-200 space-y-4">
+          {/* Main Cryptocurrency Info */}
+          <div>
+            <h3 className="text-xl font-bold text-green-400">{searchResults.name}</h3>
+            <p className="text-gray-300">{searchResults.description}</p>
+            <p>
+              <strong>Price:</strong> ${searchResults.price}
+            </p>
+            <p>
+              <strong>24h Change:</strong>{" "}
+              <span
+                className={
+                  searchResults.price_change_24h >= 0
+                    ? "text-green-400"
+                    : "text-red-400"
+                }
+              >
+                {searchResults.price_change_24h}%
+              </span>
+            </p>
+          </div>
+
+          {/* Related Stocks */}
+          <div>
+            <h4 className="text-lg font-bold text-green-400">Related Stocks:</h4>
+            <ul className="list-disc list-inside space-y-2">
+            {searchResults.relatedStocks.map((stock, index) => (
+      <li key={index}>
+        <strong>{stock.name}</strong> - ${stock.price}
+      </li>
+    ))}            </ul>
+          </div>
+
+
+             {/* Trading Platforms */}
+             <div>
+            <h4 className="text-lg font-bold text-green-400">Trading Platforms:</h4>
+            <ul className="list-disc list-inside space-y-2">
+            {searchResults.tradingPlatforms.map((platform, index) => (
+      <li key={index}>
+        {platform}
+      </li>
+    ))}            </ul>
+          </div>
+        </div>
+      ) : (
+        <p>No results found for "{searchQuery}".</p>
+      )}
+    </div>
+  </div>
+)}
+
+
 
       {/* Chatbot Modal */}
       {isChatOpen && (
