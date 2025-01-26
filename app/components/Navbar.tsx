@@ -19,7 +19,7 @@ const Navbar = () => {
       try {
         const res = await fetch("http://localhost:3000/api/db");
         const data_db = await res.json();
-        console.log("MONGODB: " + data_db);
+        console.log("MONGODB: " + data_db[0]["Symbol"]);
 
         const response = await fetch("http://localhost:3000/api/chatbot", {
           method: "POST",

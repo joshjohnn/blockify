@@ -13,6 +13,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line, Doughnut } from "react-chartjs-2";
+import { data } from "framer-motion/client";
 
 // Register required elements for Chart.js
 ChartJS.register(
@@ -24,6 +25,12 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+
+
+
+
+
+
 
 const fetchCryptoPrices = async (): Promise<{ [key: string]: number }> => {
   try {
@@ -42,14 +49,128 @@ const fetchCryptoPrices = async (): Promise<{ [key: string]: number }> => {
   }
 };
 
+
+type SentimentData = {
+  labels: string[]; // Array of stock names
+  datasets: Array<{
+    label: string; // Label for the dataset
+    data: number[]; // Array of calculated data values
+    backgroundColor: string[]; // Array of background colors for the chart
+    hoverOffset: number; // Number of pixels for the hover offset
+  }>;
+};
+
+
 export default function Portfolio() {
   const [fakePortfolio, setFakePortfolio] = useState<
-    { name: string; quantity: number; price: number }[]
+    { name: string; quantity: number; price: number; sentiment: SentimentData }[]
   >([
-    { name: "BTC", quantity: 30, price: 0 },
-    { name: "ETH", quantity: 30, price: 0 },
-    { name: "SOL", quantity: 40, price: 0 },
+    {
+      name: "BTC",
+      quantity: 30,
+      price: 0,
+      sentiment: {
+        labels: ["Positive", "Neutral", "Negative"],
+        datasets: [
+          {
+            label: "Sentiment",
+            data: [30, 40, 30],
+            backgroundColor: ["#22c55e", "#f97316", "#f9c916"],
+            hoverOffset: 4,
+          },
+        ],
+      },
+    },
+    {
+      name: "ETH",
+      quantity: 30,
+      price: 0,
+      sentiment: {
+        labels: ["Positive", "Neutral", "Negative"],
+        datasets: [
+          {
+            label: "Sentiment",
+            data: [30, 40, 30],
+            backgroundColor: ["#22c55e", "#f97316", "#f9c916"],
+            hoverOffset: 4,
+          },
+        ],
+      },
+    },
+    {
+      name: "SOL",
+      quantity: 40,
+      price: 0,
+      sentiment: {
+        labels: ["Positive", "Neutral", "Negative"],
+        datasets: [
+          {
+            label: "Sentiment",
+            data: [30, 40, 30],
+            backgroundColor: ["#22c55e", "#f97316", "#f9c916"],
+            hoverOffset: 4,
+          },
+        ],
+      },
+    },
   ]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch("http://localhost:3000/api/db");
+        const data_db = await res.json();
+  
+        const sentimentMapping: Record<string, number[]> = {};
+        // for (const item of data_db) {
+        //   console.log(item)
+        //   //const { Symbol, Positive, Neutral, Negative } = item;
+        //   const { Negative, Positive, Neutral, Symbol } = item;
+          
+        //   sentimentMapping[Symbol.toUpperCase()] = [Positive, Neutral, Negative];
+        //   //console.log(sentimentMapping[Symbol.toUpperCase()])
+        // }
+
+
+        for (const item of data_db) {
+          const { Symbol, Bullish, Bearish, Neutral } = item; // Correct field names
+          sentimentMapping[Symbol] = [Bullish, Neutral, Bearish]; // Map in the correct order
+        }
+  
+        console.log("Sentiment Mapping:", sentimentMapping);
+  
+        setFakePortfolio((prevPortfolio) =>
+          prevPortfolio.map((stock) => {
+            console.log("Mapping for:", stock.name, stock.sentiment.datasets[0]);
+            return {
+              ...stock,
+              sentiment: {
+                ...stock.sentiment,
+                datasets: [
+                  {
+                    ...stock.sentiment.datasets[0],
+                    data: sentimentMapping[stock.name.toUpperCase()] || [0, 0, 0],
+                  },
+                ],
+              },
+            };
+          })
+        );
+
+
+
+    console.log(sentimentMapping)
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
+
+
+
+
 
   useEffect(() => {
     const updatePortfolioPrices = async () => {
@@ -100,6 +221,8 @@ export default function Portfolio() {
       },
     ],
   };
+
+
 
   // Portfolio Composition Data
   const compositionData = {
@@ -176,47 +299,10 @@ export default function Portfolio() {
                   }}
                 />
               </div>
+              
             </div>
-
-            {/* Details */}
-            <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6 w-full md:w-1/2">
-              <h2 className="mb-4 text-lg text-white font-bold">Details</h2>
-
-              {/* Header */}
-              <div className="flex mt-4 gap-8 border-b border-gray-700 pb-2">
-                <span className="text-xs w-[50%] text-left font-bold text-white">Name</span>
-                <span className="text-xs w-[25%] text-center font-bold text-white">Quantity</span>
-                <span className="text-xs w-[25%] text-right font-bold text-white">Price</span>
-              </div>
-
-              {/* Stock Details */}
-              {fakePortfolio.map((stock, index) => (
-                <div key={index}>
-                  <div className="flex mt-4 gap-8">
-                    <span className="text-sm w-[1/2]">{stock.name}</span>
-                    <span className="text-sm w-[1/4]">{stock.quantity}</span>
-                    <span className="text-sm w-[1/4]">${stock.price.toFixed(2)}</span>
-                  </div>
-                  <div className="w-full h-[2px] bg-gray-700 mt-4"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-      {/* Portfolio Scores Split into Two Equal Boxes */}
-      <div className="flex flex-col gap-6">
-        {/* First Half */}
-        <div className="bg-gray-900 rounded-xl p-6 shadow-lg flex-grow">
-          <h2 className="mb-4 text-lg">Portfolio Scores (Part 1)</h2>
-          <ul className="space-y-4">
-            <li className="text-gray-400">Environmental Score</li>
-            <li className="text-gray-400">Exchange Potential</li>
-          </ul>
-        </div>
-
           {/* Second Half */}
-          <div className="bg-gray-900 rounded-xl p-6 shadow-lg flex-grow">
+          <div className="bg-gray-900 rounded-xl p-6 shadow-lg flex-grow mt-6">
             <h2 className="mb-4 text-lg">Adjust Portfolio</h2>
             {fakePortfolio.map((stock, index) => (
               <div key={index} className="flex justify-between items-center mb-4">
@@ -238,6 +324,63 @@ export default function Portfolio() {
               </div>
             ))}
           </div>
+
+          </div>
+          
+        </div>
+
+        {/* Portfolio Scores Split into Two Equal Boxes */}
+        <div className="flex flex-col gap-6">
+            {/* Details */}
+            <div className="bg-gray-900 rounded-xl p-6 shadow-lg w-full md:w-full h-full">
+              <h2 className="mb-4 text-lg text-white font-bold">Details</h2>
+
+              {/* Header */}
+              <div className="flex flex-row mt-4 gap-8 border-b border-gray-700 pb-2">
+                <span className="text-xs w-[25%] text-left font-bold text-white">Name</span>
+                <span className="text-xs w-[25%] text-left font-bold text-white">Sentiment</span>
+                <span className="text-xs w-[25%] text-left font-bold text-white">Quantity</span>
+                <span className="text-xs w-[25%] text-left font-bold text-white">Price</span>
+              </div>
+
+              {/* Stock Details */}
+              {fakePortfolio.map((stock, index) => (
+                <div key={index} className="w-full">
+                  <div className="flex flex-row mt-4 gap-8 w-full">
+                    <span className="text-sm w-[15%]">{stock.name}</span>
+
+
+                    <div className="w-[30%] mx-auto"> 
+                    <Doughnut
+                      data={stock.sentiment}
+                      options={{
+                        responsive: true,
+                        plugins: {
+                          legend: {
+                            display: false,
+                            labels: {
+                              color: "white",
+                            },
+                          },
+                          tooltip: {
+                            bodyColor: "white",
+                            titleColor: "white",
+                          },
+                        },
+                      }}
+                    />
+                    </div>
+
+
+                    <span className="text-sm w-[25%]">{stock.quantity}</span>
+                    <span className="text-sm w-[25%]">${stock.price.toFixed(2)}</span>
+                  </div>
+                  <div className="w-full h-[2px] bg-gray-700 mt-4"></div>
+                </div>
+              ))}
+            </div>
+
+
         </div>
       </div>
     </div>
