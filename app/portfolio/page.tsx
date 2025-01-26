@@ -32,7 +32,7 @@ export default function Portfolio() {
       name: "BTC",
       quantity: 30,
       price: 10000,
-      sentiment : {
+      sentiment: {
         positive: 0.5,
         negative: 0.3,
         neutral: 0.2
@@ -43,7 +43,7 @@ export default function Portfolio() {
       quantity: 30,
       price: 300,
 
-      sentiment : {
+      sentiment: {
         positive: 0.5,
         negative: 0.3,
         neutral: 0.2
@@ -54,7 +54,7 @@ export default function Portfolio() {
       quantity: 40,
       price: 300,
 
-      sentiment : {
+      sentiment: {
         positive: 0.5,
         negative: 0.3,
         neutral: 0.2
@@ -99,7 +99,7 @@ export default function Portfolio() {
         {/* Portfolio Performance */}
         <div className="col-span-2">
           <div className="bg-gray-900 rounded-xl p-6 shadow-lg">
-            <h2 className="mb-4 text-lg">Portfolio Name</h2>
+            <h2 className="mb-4 text-lg">Your Portfolio</h2>
 
             <div className="w-full">
               <Line
@@ -149,28 +149,38 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6 w-1/2">
-              <h2 className="mb-4 text-lg">Details</h2>
+            <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6 w-full md:w-1/2">
+  <h2 className="mb-4 text-lg text-white font-bold">Details</h2>
 
-              
-              {/* put stock details here */}
-              {ownedStocks.map((stock, index) => (
-                <div  key={index}>
-                  <div className="flex mt-4 gap-8">
-                    <span className="text-xs w-[1/2]">{stock.name}</span>
-                    <span className="text-xs w-[1/4]">{stock.quantity}</span>
-                    <span className="text-xs w-[1/4]">{stock.price}</span>
-                  </div>
+  {/* Header */}
+  <div className="flex mt-4 gap-8 border-b border-gray-700 pb-2">
+    <span className="text-xs w-[50%] text-left font-bold text-white">Name</span>
+    <span className="text-xs w-[25%] text-center font-bold text-white">Quantity</span>
+    <span className="text-xs w-[25%] text-right font-bold text-white">Price</span>
 
-                  <div className="w-full h-[2px] bg-gray-700 mt-4"> 
-                    
-                    </div>
+   
+   
+    '
 
-                </div>
+  </div>
 
-              ))}
+  {/* Stock Details */}
+  {ownedStocks.map((stock, index) => (
+    <div
+      key={index}
+      className="flex mt-2 gap-8 items-center border-b border-gray-700 pb-2 hover:bg-gray-800 transition-all"
+    >
+      <span className="text-xs w-[50%] text-left text-gray-300">{stock.name}</span>
+      <span className="text-xs w-[25%] text-center text-gray-300">{stock.quantity}</span>
+      <span className="text-xs w-[25%] text-right text-gray-300">{stock.price}</span>
+    </div>
+  ))}
 
-            </div>
+
+
+
+</div>
+
           </div>
 
         </div>
