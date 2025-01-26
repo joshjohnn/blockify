@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import {
   Chart as ChartJS,
@@ -25,14 +25,50 @@ ChartJS.register(
   Legend
 );
 
+const fetchCryptoPrices = async (): Promise<{ [key: string]: number }> => {
+  try {
+    const response = await fetch(
+      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana&vs_currencies=usd"
+    );
+    const data = await response.json();
+    return {
+      btc: data.bitcoin.usd,
+      eth: data.ethereum.usd,
+      sol: data.solana.usd,
+    };
+  } catch (error) {
+    console.error("Error fetching crypto prices:", error);
+    return { btc: 0, eth: 0, sol: 0 }; // Fallback values
+  }
+};
+
 export default function Portfolio() {
   const [fakePortfolio, setFakePortfolio] = useState<
     { name: string; quantity: number; price: number }[]
   >([
-    { name: "BTC", quantity: 30, price: 10000 },
-    { name: "ETH", quantity: 30, price: 300 },
-    { name: "SOL", quantity: 40, price: 300 },
+    { name: "BTC", quantity: 30, price: 0 },
+    { name: "ETH", quantity: 30, price: 0 },
+    { name: "SOL", quantity: 40, price: 0 },
   ]);
+
+  useEffect(() => {
+    const updatePortfolioPrices = async () => {
+      const prices = await fetchCryptoPrices();
+      setFakePortfolio((prevPortfolio) =>
+        prevPortfolio.map((stock) => ({
+          ...stock,
+          price: prices[stock.name.toLowerCase()] || 0, // Safeguard against missing data
+        }))
+      );
+    };
+    updatePortfolioPrices();
+
+    const interval = setInterval(() => {
+      updatePortfolioPrices();
+    }, 60000); // Update every 60 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   // Calculate total value for performance chart
   const totalValue = fakePortfolio.reduce(
@@ -40,13 +76,24 @@ export default function Portfolio() {
     0
   );
 
+  // Simulate intermediate values for the portfolio performance
+  const simulatePerformance = () => {
+    const monthlyGrowthFactor = 1.05; // Example: 5% growth per month
+    let simulatedValue = totalValue / Math.pow(monthlyGrowthFactor, 6); // Backtrack to calculate Aug value
+    return Array.from({ length: 7 }, (_, i) => {
+      const value = simulatedValue;
+      simulatedValue *= monthlyGrowthFactor; // Increment for next month
+      return value;
+    });
+  };
+
   // Portfolio Performance Data
   const portfolioData = {
     labels: ["Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Present"],
     datasets: [
       {
         label: "Portfolio Performance",
-        data: [20000, 25000, 30000, 35000, 40000, 45000, totalValue], // Updated dynamically
+        data: simulatePerformance(),
         borderColor: "#22c55e",
         backgroundColor: "rgba(34, 197, 94, 0.5)",
         tension: 0.4,
@@ -144,13 +191,13 @@ export default function Portfolio() {
 
               {/* Stock Details */}
               {fakePortfolio.map((stock, index) => (
-                <div
-                  key={index}
-                  className="flex mt-2 gap-8 items-center border-b border-gray-700 pb-2 hover:bg-gray-800 transition-all"
-                >
-                  <span className="text-xs w-[50%] text-left text-gray-300">{stock.name}</span>
-                  <span className="text-xs w-[25%] text-center text-gray-300">{stock.quantity}</span>
-                  <span className="text-xs w-[25%] text-right text-gray-300">{stock.price}</span>
+                <div key={index}>
+                  <div className="flex mt-4 gap-8">
+                    <span className="text-sm w-[1/2]">{stock.name}</span>
+                    <span className="text-sm w-[1/4]">{stock.quantity}</span>
+                    <span className="text-sm w-[1/4]">${stock.price.toFixed(2)}</span>
+                  </div>
+                  <div className="w-full h-[2px] bg-gray-700 mt-4"></div>
                 </div>
               ))}
             </div>
@@ -168,17 +215,31 @@ export default function Portfolio() {
           </ul>
         </div>
 
-        {/* Second Half */}
-        <div className="bg-gray-900 rounded-xl p-6 shadow-lg flex-grow">
-          <h2 className="mb-4 text-lg">Potential Uses of Your Crypto</h2>
-          <ul className="space-y-4">
-            <li className="text-gray-400">Bitcoin: Digital Gold, Subway, Pizza Hut, Travel (Expedia), Cars (Ferrari, BMW, Tesla, etc)</li>
-            <li className="text-gray-400">Social Media Sentiment</li>
-          </ul>
+          {/* Second Half */}
+          <div className="bg-gray-900 rounded-xl p-6 shadow-lg flex-grow">
+            <h2 className="mb-4 text-lg">Adjust Portfolio</h2>
+            {fakePortfolio.map((stock, index) => (
+              <div key={index} className="flex justify-between items-center mb-4">
+                <span className="text-gray-300">{stock.name}</span>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => handleUpdatePortfolio(stock.name, 10)}
+                    className="bg-green-500 text-white px-2 py-1 rounded"
+                  >
+                    +10
+                  </button>
+                  <button
+                    onClick={() => handleUpdatePortfolio(stock.name, -10)}
+                    className="bg-red-500 text-white px-2 py-1 rounded"
+                  >
+                    -10
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-
     </div>
   );
 }
