@@ -42,7 +42,7 @@ export default function Portfolio() {
 
   // Portfolio Performance Data
   const portfolioData = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+    labels: ["Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Present"],
     datasets: [
       {
         label: "Portfolio Performance",
@@ -88,7 +88,7 @@ export default function Portfolio() {
         {/* Portfolio Performance */}
         <div className="col-span-2">
           <div className="bg-gray-900 rounded-xl p-6 shadow-lg">
-            <h2 className="mb-4 text-lg">Portfolio Name</h2>
+            <h2 className="mb-4 text-lg">Jack the Bulldog's Portfolio</h2>
             <div className="w-full">
               <Line
                 data={portfolioData}
