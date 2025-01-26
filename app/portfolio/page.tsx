@@ -80,7 +80,6 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Navbar */}
       <Navbar />
 
       {/* Main Content */}
@@ -133,43 +132,53 @@ export default function Portfolio() {
             </div>
 
             {/* Details */}
-            <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6 w-1/2">
-              <h2 className="mb-4 text-lg">Details</h2>
+            <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6 w-full md:w-1/2">
+              <h2 className="mb-4 text-lg text-white font-bold">Details</h2>
+
+              {/* Header */}
+              <div className="flex mt-4 gap-8 border-b border-gray-700 pb-2">
+                <span className="text-xs w-[50%] text-left font-bold text-white">Name</span>
+                <span className="text-xs w-[25%] text-center font-bold text-white">Quantity</span>
+                <span className="text-xs w-[25%] text-right font-bold text-white">Price</span>
+              </div>
+
+              {/* Stock Details */}
               {fakePortfolio.map((stock, index) => (
-                <div key={index}>
-                  <div className="flex mt-4 gap-8">
-                    <span className="text-sm w-[1/2]">{stock.name}</span>
-                    <span className="text-sm w-[1/4]">{stock.quantity}</span>
-                    <span className="text-sm w-[1/4]">${stock.price}</span>
-                  </div>
-                  <div className="w-full h-[2px] bg-gray-700 mt-4"></div>
+                <div
+                  key={index}
+                  className="flex mt-2 gap-8 items-center border-b border-gray-700 pb-2 hover:bg-gray-800 transition-all"
+                >
+                  <span className="text-xs w-[50%] text-left text-gray-300">{stock.name}</span>
+                  <span className="text-xs w-[25%] text-center text-gray-300">{stock.quantity}</span>
+                  <span className="text-xs w-[25%] text-right text-gray-300">{stock.price}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Portfolio Scores Split into Two Equal Boxes */}
-        <div className="flex flex-col gap-6">
-          {/* First Half */}
-          <div className="bg-gray-900 rounded-xl p-6 shadow-lg flex-grow">
-            <h2 className="mb-4 text-lg">Portfolio Scores (Part 1)</h2>
-            <ul className="space-y-4">
-              <li className="text-gray-400">Environmental Score</li>
-              <li className="text-gray-400">Exchange Potential</li>
-            </ul>
-          </div>
+      {/* Portfolio Scores Split into Two Equal Boxes */}
+      <div className="flex flex-col gap-6">
+        {/* First Half */}
+        <div className="bg-gray-900 rounded-xl p-6 shadow-lg flex-grow">
+          <h2 className="mb-4 text-lg">Portfolio Scores (Part 1)</h2>
+          <ul className="space-y-4">
+            <li className="text-gray-400">Environmental Score</li>
+            <li className="text-gray-400">Exchange Potential</li>
+          </ul>
+        </div>
 
-          {/* Second Half */}
-          <div className="bg-gray-900 rounded-xl p-6 shadow-lg flex-grow">
-            <h2 className="mb-4 text-lg">Potential Uses of Your Crypto</h2>
-            <ul className="space-y-4">
-              <li className="text-gray-400">Bitcoin: Digital Gold, Subway, Pizza Hut, Travel (Expedia), Cars (Ferrari, BMW, Tesla, etc)</li>
-              <li className="text-gray-400">Social Media Sentiment</li>
-            </ul>
-          </div>
+        {/* Second Half */}
+        <div className="bg-gray-900 rounded-xl p-6 shadow-lg flex-grow">
+          <h2 className="mb-4 text-lg">Potential Uses of Your Crypto</h2>
+          <ul className="space-y-4">
+            <li className="text-gray-400">Bitcoin: Digital Gold, Subway, Pizza Hut, Travel (Expedia), Cars (Ferrari, BMW, Tesla, etc)</li>
+            <li className="text-gray-400">Social Media Sentiment</li>
+          </ul>
         </div>
       </div>
+    </div>
+
     </div>
   );
 }
