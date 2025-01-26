@@ -6,7 +6,7 @@ export async function POST(req) {
       // Create a dynamic prompt for the OpenAI API
       const prompt = `
       Give me all the related stocks and etfs that invest, buy, sell and mine "${input}"  with their current price. 
-      Give me a detailed description of "${input}" with current price and its price change in last 24 hours.
+      Give me big description of "${input}" with current price and its price change in last 24 hours.
       Give me a list of trading platforms that users can trade "${input}"
       Give the response in the JSON format like the following sample:
         {
