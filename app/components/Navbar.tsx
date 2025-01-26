@@ -41,7 +41,7 @@ const Navbar = () => {
     if (searchQuery.trim() === "") return; // Prevent empty search
 
     try {
-      const response = await fetch("http://localhost:3000/api/relatedStocks", {
+      const response = await fetch("/api/relatedStocks", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ input: searchQuery }),
