@@ -30,29 +30,6 @@ const Navbar = () => {
   ]);
   const [input, setInput] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch("http://localhost:3000/api/db");
-        const data_db = await res.json();
-        console.log("MONGODB: " + data_db);
-
-        const response = await fetch("http://localhost:3000/api/chatbot", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ input }),
-        });
-
-        const data = await response.json();
-        console.log(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
   const router = useRouter();
   const currentPath = usePathname();
 
