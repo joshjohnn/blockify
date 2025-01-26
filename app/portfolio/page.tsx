@@ -162,34 +162,11 @@ export default function Portfolio() {
 
           {/* Second Half */}
           <div className="bg-gray-900 rounded-xl p-6 shadow-lg flex-grow">
-<<<<<<< Updated upstream
-            <h2 className="mb-4 text-lg">Adjust Portfolio</h2>
-            {fakePortfolio.map((stock, index) => (
-              <div key={index} className="flex justify-between items-center mb-4">
-                <span className="text-gray-300">{stock.name}</span>
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => handleUpdatePortfolio(stock.name, 10)}
-                    className="bg-green-500 text-white px-2 py-1 rounded"
-                  >
-                    +10
-                  </button>
-                  <button
-                    onClick={() => handleUpdatePortfolio(stock.name, -10)}
-                    className="bg-red-500 text-white px-2 py-1 rounded"
-                  >
-                    -10
-                  </button>
-                </div>
-              </div>
-            ))}
-=======
             <h2 className="mb-4 text-lg">Potential Uses of Your Crypto</h2>
             <ul className="space-y-4">
               <li className="text-gray-400">Bitcoin: Digital Gold, Subway, Pizza Hut, Travel (Expedia), Cars (Ferrari, BMW, Tesla, etc)</li>
               <li className="text-gray-400">Social Media Sentiment</li>
             </ul>
->>>>>>> Stashed changes
           </div>
         </div>
       </div>
