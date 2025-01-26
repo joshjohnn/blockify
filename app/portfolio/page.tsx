@@ -375,10 +375,19 @@ export default function Portfolio() {
                     <span className="text-sm w-[25%]">{stock.quantity}</span>
                     <span className="text-sm w-[25%]">${stock.price.toFixed(2)}</span>
                   </div>
+
+
                   <div className="w-full h-[2px] bg-gray-700 mt-4"></div>
+
                 </div>
               ))}
+
+
+
+
+            <p className="text-sm">The Sentiment Scores found when you hover over the donuts are based on an AI Sentiment analysis by CryptoBERT of any reddit posts and comments related to that Cryptocurrency made within the last month. We determined the score for each sentiment using a combination of ML, finetuning, and data sanitation. We used a custom webscraping tool we created for Blockify. When you hover over one of the 'donuts' you'll see the sentiment scores we calculated based on the amount of comments and the strength of each comment </p>
             </div>
+
 
 
         </div>
