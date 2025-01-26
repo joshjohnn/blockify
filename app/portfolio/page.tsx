@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import {
   Chart as ChartJS,
@@ -26,50 +26,27 @@ ChartJS.register(
 );
 
 export default function Portfolio() {
+  const [fakePortfolio, setFakePortfolio] = useState<
+    { name: string; quantity: number; price: number }[]
+  >([
+    { name: "BTC", quantity: 30, price: 10000 },
+    { name: "ETH", quantity: 30, price: 300 },
+    { name: "SOL", quantity: 40, price: 300 },
+  ]);
 
-  let ownedStocks = [
-    {
-      name: "BTC",
-      quantity: 30,
-      price: 10000,
-      sentiment: {
-        positive: 0.5,
-        negative: 0.3,
-        neutral: 0.2
-      }
-    },
-    {
-      name: "ETH",
-      quantity: 30,
-      price: 300,
+  // Calculate total value for performance chart
+  const totalValue = fakePortfolio.reduce(
+    (total, stock) => total + stock.quantity * stock.price,
+    0
+  );
 
-      sentiment: {
-        positive: 0.5,
-        negative: 0.3,
-        neutral: 0.2
-      }
-    },
-    {
-      name: "SOL",
-      quantity: 40,
-      price: 300,
-
-      sentiment: {
-        positive: 0.5,
-        negative: 0.3,
-        neutral: 0.2
-      }
-    },
-
-
-  ]
-
+  // Portfolio Performance Data
   const portfolioData = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
     datasets: [
       {
         label: "Portfolio Performance",
-        data: [3, 4, 3.5, 5, 6, 5.5, 7],
+        data: [20000, 25000, 30000, 35000, 40000, 45000, totalValue], // Updated dynamically
         borderColor: "#22c55e",
         backgroundColor: "rgba(34, 197, 94, 0.5)",
         tension: 0.4,
@@ -77,16 +54,28 @@ export default function Portfolio() {
     ],
   };
 
+  // Portfolio Composition Data
   const compositionData = {
-    labels: ["BTC", "ETH", "SOL"],
+    labels: fakePortfolio.map((stock) => stock.name),
     datasets: [
       {
         label: "Composition",
-        data: [30, 30, 40],
+        data: fakePortfolio.map((stock) => stock.quantity * stock.price),
         backgroundColor: ["#22c55e", "#f97316", "#f9c916"],
         hoverOffset: 4,
       },
     ],
+  };
+
+  // Update portfolio state
+  const handleUpdatePortfolio = (name: string, amount: number) => {
+    setFakePortfolio((prevPortfolio) =>
+      prevPortfolio.map((stock) =>
+        stock.name === name
+          ? { ...stock, quantity: stock.quantity + amount }
+          : stock
+      )
+    );
   };
 
   return (
@@ -99,8 +88,7 @@ export default function Portfolio() {
         {/* Portfolio Performance */}
         <div className="col-span-2">
           <div className="bg-gray-900 rounded-xl p-6 shadow-lg">
-            <h2 className="mb-4 text-lg">Your Portfolio</h2>
-
+            <h2 className="mb-4 text-lg">Portfolio Name</h2>
             <div className="w-full">
               <Line
                 data={portfolioData}
@@ -108,7 +96,6 @@ export default function Portfolio() {
                 height={150}
               />
             </div>
-
             <div className="flex justify-around mt-4 text-sm text-gray-400">
               <span>1D</span>
               <span>1W</span>
@@ -119,70 +106,47 @@ export default function Portfolio() {
               <span>ALL</span>
             </div>
           </div>
+
           <div className="w-full flex flex-row">
+            {/* Composition */}
             <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6 mr-6 w-1/2">
               <h2 className="mb-4 text-lg">Composition</h2>
               <div className="w-[75%] mx-auto">
-
                 <Doughnut
-                  className="color-white"
                   data={compositionData}
                   options={{
                     responsive: true,
                     plugins: {
                       legend: {
                         labels: {
-                          color: "white", // Legend text color
+                          color: "white",
                         },
                       },
                       tooltip: {
-                        bodyColor: "white", // Tooltip body text color
-                        titleColor: "white", // Tooltip title text color
+                        bodyColor: "white",
+                        titleColor: "white",
                       },
-                    },
-                    layout: {
-                      padding: 20, // Optional: Adds padding around the chart
                     },
                   }}
                 />
-
               </div>
             </div>
 
-            <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6 w-full md:w-1/2">
-  <h2 className="mb-4 text-lg text-white font-bold">Details</h2>
-
-  {/* Header */}
-  <div className="flex mt-4 gap-8 border-b border-gray-700 pb-2">
-    <span className="text-xs w-[50%] text-left font-bold text-white">Name</span>
-    <span className="text-xs w-[25%] text-center font-bold text-white">Quantity</span>
-    <span className="text-xs w-[25%] text-right font-bold text-white">Price</span>
-
-   
-   
-    '
-
-  </div>
-
-  {/* Stock Details */}
-  {ownedStocks.map((stock, index) => (
-    <div
-      key={index}
-      className="flex mt-2 gap-8 items-center border-b border-gray-700 pb-2 hover:bg-gray-800 transition-all"
-    >
-      <span className="text-xs w-[50%] text-left text-gray-300">{stock.name}</span>
-      <span className="text-xs w-[25%] text-center text-gray-300">{stock.quantity}</span>
-      <span className="text-xs w-[25%] text-right text-gray-300">{stock.price}</span>
-    </div>
-  ))}
-
-
-
-
-</div>
-
+            {/* Details */}
+            <div className="bg-gray-900 rounded-xl p-6 shadow-lg mt-6 w-1/2">
+              <h2 className="mb-4 text-lg">Details</h2>
+              {fakePortfolio.map((stock, index) => (
+                <div key={index}>
+                  <div className="flex mt-4 gap-8">
+                    <span className="text-sm w-[1/2]">{stock.name}</span>
+                    <span className="text-sm w-[1/4]">{stock.quantity}</span>
+                    <span className="text-sm w-[1/4]">${stock.price}</span>
+                  </div>
+                  <div className="w-full h-[2px] bg-gray-700 mt-4"></div>
+                </div>
+              ))}
+            </div>
           </div>
-
         </div>
 
         {/* Portfolio Scores Split into Two Equal Boxes */}
@@ -198,11 +162,26 @@ export default function Portfolio() {
 
           {/* Second Half */}
           <div className="bg-gray-900 rounded-xl p-6 shadow-lg flex-grow">
-            <h2 className="mb-4 text-lg">Potential Uses of Your Crypto</h2>
-            <ul className="space-y-4">
-              <li className="text-gray-400">Bitcoin: Digital Gold, Subway, Pizza Hut, Travel (Expedia), Cars (Ferrari, BMW, Tesla, etc)</li>
-              <li className="text-gray-400">Social Media Sentiment</li>
-            </ul>
+            <h2 className="mb-4 text-lg">Adjust Portfolio</h2>
+            {fakePortfolio.map((stock, index) => (
+              <div key={index} className="flex justify-between items-center mb-4">
+                <span className="text-gray-300">{stock.name}</span>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => handleUpdatePortfolio(stock.name, 10)}
+                    className="bg-green-500 text-white px-2 py-1 rounded"
+                  >
+                    +10
+                  </button>
+                  <button
+                    onClick={() => handleUpdatePortfolio(stock.name, -10)}
+                    className="bg-red-500 text-white px-2 py-1 rounded"
+                  >
+                    -10
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
