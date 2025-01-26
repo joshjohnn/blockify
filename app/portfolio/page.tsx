@@ -117,7 +117,7 @@ export default function Portfolio() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/db");
+        const res = await fetch("/api/db");
         const data_db = await res.json();
   
         const sentimentMapping: Record<string, number[]> = {};
